@@ -1,43 +1,97 @@
-<!DOCTYPE html> 
-<html lang="th"> 
-<head> 
- <meta charset="UTF-8"> 
- <title>หน้าแนะนำตัวของฉัน</title> 
- <style> 
-body { 
-background-color: #E6E6FA; lavender: #333; 
-text-align: center; padding: 50px; 
- } 
-.card { 
-background: MistyRose; border-radius: 50px; 
-box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-max-width: 500px; margin: 0 auto; padding: 30px; 
- } 
- .btn { 
-  display: inline-block; 
-  background: #2c3e50; 
-  color: white; 
-  padding: 10px 20px; 
-  text-decoration: none; 
-  border-radius: 5px; 
-  margin-top: 20px; 
-  animation: float 2s ease-in-out infinite; 
-}
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-</style>
-</head> 
-<body> 
- <div class="card"> 
- <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน👋 </h1> 
- <p>สวัสดีครับ! ผมชื่อ <strong>อัครินทร์ เสารยะวิเศษ (Akarin Saorayawiset)</strong></p> 
- <p>ขณะนี้กำลังศึกษา/สนใจด้าน Industrial Engineering (IE)</p> 
- <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p> 
-  <!-- ปุ่มกดหน้าถัดไป -->
-<a href="portfolio.html" class="btn"> ดูแฟ้มผลงานของฉัน</a>
- </div> 
-</body> 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแนะนำตัวของฉัน</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #E6E6FA 0%, #D8BFD8 100%);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 228, 225, 0.95); 
+            border-radius: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            transition: all 0.4s ease; 
+            animation: fadeInUp 1s ease-out; 
+        }
+        .card:hover {
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+        }
+        .btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px; 
+            margin-top: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+            transition: all 0.3s ease;
+            animation: float 2.5s ease-in-out infinite; 
+        }
+        .btn:hover {
+            background: #34495e; 
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+            letter-spacing: 1px; 
+        }
+
+        h1 {
+            color: #FF0000;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin: 10px 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 👋</h1>
+        <p>สวัสดีครับ! ผมชื่อ <strong>อัครินทร์ เสารยะวิเศษ (Akarin Saorayawiset)</strong></p>
+        <p>ขณะนี้กำลังศึกษา/สนใจด้าน Industrial Engineering (IE)</p>
+        <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
+        <a href="portfolio.html" class="btn">ดูแฟ้มผลงานของฉัน</a>
+    </div>
+
+</body>
 </html>
