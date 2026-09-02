@@ -44,8 +44,8 @@
 
         .profile-wrapper {
             position: relative;
-            width: 150px;       
-            height: 200px;      
+            width: 140px;       
+            height: 180px;      
             margin: 0 auto 20px;
         }
 
@@ -83,7 +83,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 12px;
-            margin: 20px 0 25px;
+            margin: 20px 0;
         }
 
         .info-box {
@@ -107,25 +107,40 @@
             color: #2c3e50;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #eef2f7 0%, #e0e7ff 100%);
-            border: 1px solid #c7d2fe;
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 25px;
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0 25px;
+            text-align: left;
         }
 
-        .highlight-box p {
-            font-size: 15px;
-            color: #3730a3;
+        .detail-card {
+            background: linear-gradient(135deg, #eef2f7 0%, #e0e7ff 100%);
+            border: 1px solid #c7d2fe;
+            padding: 15px 18px;
+            border-radius: 16px;
+        }
+
+        .detail-card h3 {
+            font-size: 14px;
+            color: #312e81;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .detail-card p {
+            font-size: 13.5px;
+            color: #4b5563;
             line-height: 1.6;
         }
 
         .btn-group {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         .btn {
@@ -143,9 +158,10 @@
             font-size: 15px;
             box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: float 2.5s ease-in-out infinite;
+            overflow: hidden;
             width: 100%;
             max-width: 320px;
-            overflow: hidden;
         }
 
         .btn::before {
@@ -178,27 +194,10 @@
             transform: translateX(5px);
         }
 
-        /* ส่วน Social Links เพิ่มเติมสำหรับ GitHub */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            font-size: 14px;
-            color: #4b5563;
-            text-decoration: none;
-            background: #f3f4f6;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.2s ease;
-        }
-
-        .social-link:hover {
-            background: #e5e7eb;
-            color: #1f2937;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
         }
 
         @keyframes fadeInUp {
@@ -234,9 +233,15 @@
             </div>
         </div>
 
-        <div class="highlight-box">
-            <p>⚙️ <strong>สาขาที่สนใจ :</strong> วิศวกรรมอุตสาหการ (Industrial Engineering - IE)</p>
-            <p style="font-size: 13px; color: #4b5563; margin-top: 4px;">มุ่งมั่นพัฒนาทักษะการจัดการระบบ และ การเพิ่มประสิทธิภาพกระบวนการ</p>
+        <div class="details-section">
+            <div class="detail-card">
+                <h3>🎯 เป้าหมายในการศึกษาต่อ</h3>
+                <p>มีความมุ่งมั่นตั้งใจที่จะศึกษาต่อในระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (IE) ในมหาวิทยาลัยที่ใฝ่ฝัน เพื่อเตรียมความพร้อมสู่สายอาชีพวิศวกรมืออาชีพ</p>
+            </div>
+            <div class="detail-card">
+                <h3>💡 สิ่งที่สนใจและความตั้งใจในคณะ</h3>
+                <p>สนใจกระบวนการเพิ่มประสิทธิภาพการทำงาน การลดความสูญเปล่าในระบบการผลิต (Lean Manufacturing) ตลอดจนการประยุกต์ใช้เทคโนโลยีและการจัดการเชิงระบบเพื่อยกระดับอุตสาหกรรมให้ก้าวทันโลกยุคใหม่</p>
+            </div>
         </div>
 
         <div class="btn-group">
@@ -245,12 +250,10 @@
                 <span class="arrow">➔</span>
             </a>
         </div>
+    </div>
 
-        <!-- ช่องทางติดต่อหรือลิงก์ GitHub -->
-        <div class="social-links">
-            <a href="https://github.com/ชื่อยูสเซอร์เนมของคุณ" target="_blank" class="social-link">GitHub</a>
-            <a href="mailto:อีเมลของคุณ@gmail.com" class="social-link">Contact Email</a>
-        </div>
+</body>
+</html>
     </div>
 
 </body>
