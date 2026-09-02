@@ -1,143 +1,201 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แฟ้มสะสมงานของฉัน</title>
+    <title>Portfolio | อัครินทร์ เสารยะวิเศษ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            background: linear-gradient(135deg, #E6E6FA 0%, #D8BFD8 100%);
-            color: #333;
-            text-align: center;
-            padding: 40px 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            color: #2d3748;
             min-height: 100vh;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .portfolio-container {
-            max-width: 750px;
+            max-width: 800px;
             width: 100%;
-            animation: fadeInUp 1s ease-out; 
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* ส่วนโปรไฟล์แนะนำตัว */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            margin-bottom: 15px;
         }
 
         h1 {
-            color: #2c3e50;
-            font-size: 30px;
-            margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            color: #1a202c;
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
         .subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 15px;
+            color: #718096;
+            margin-bottom: 20px;
         }
 
-        .project-card {
-            background: rgba(255, 228, 225, 0.95); 
+        /* แท็กแสดงความสนใจ */
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .interest-tag {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 6px 14px;
             border-radius: 20px;
-            padding: 25px 30px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #bee3f8;
+        }
+
+        /* หัวข้อส่วน */
+        .section-title {
+            font-size: 18px;
+            color: #2d3748;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            text-align: left;
+        }
+
+        /* การ์ดผลงาน */
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #edf2f7;
+            border-radius: 16px;
+            padding: 24px;
             margin-bottom: 20px;
-            text-align: left; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             transition: all 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            background: rgba(255, 228, 225, 1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
         }
 
         .project-card h3 {
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 20px;
+            color: #2b6cb0;
+            font-size: 18px;
+            margin-bottom: 12px;
         }
 
         .portfolio-img {
-            width: 100%; 
-            height: auto;
-            border-radius: 12px; 
-            margin-bottom: 15px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-            object-fit: cover; 
-            max-height: 350px; 
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
 
         .project-card p {
-            color: #555;
-            font-size: 16px;
+            color: #4a5568;
+            font-size: 15px;
             line-height: 1.6;
-            margin: 0;
+        }
+
+        /* ปุ่มกด */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .btn {
-            display: inline-block;
-            background: #2c3e50;
+            background: #3182ce;
             color: white;
-            padding: 12px 35px;
+            padding: 10px 28px;
             text-decoration: none;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
             transition: all 0.3s ease;
-            animation: float 2.5s ease-in-out infinite;
         }
 
         .btn:hover {
-            background: #34495e;
-            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
-            letter-spacing: 1px;
+            background: #2b6cb0;
+            box-shadow: 0 6px 16px rgba(49, 130, 206, 0.4);
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
     <div class="portfolio-container">
-        <h1>แฟ้มสะสมงาน (Portfolio) นายอัครินทร์ เสารยะวิเศษ</h1>
-        <p class="subtitle">นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
+        
+        <div class="profile-section">
+            <img src="profile.jpg" alt="รูปโปรไฟล์นายอัครินทร์" class="profile-img">
+            <h1>นายอัครินทร์ เสารยะวิเศษ</h1>
+            <p class="subtitle">นักเรียนผู้มีความหลงใหลในเทคโนโลยีและการเรียนรู้สิ่งใหม่ๆ</p>
+            
+            <div class="interests-container">
+                <span class="interest-tag">💻 วิทยาการคำนวณ</span>
+                <span class="interest-tag">🌐 พัฒนาเว็บไซต์</span>
+                <span class="interest-tag">🤖 ปัญญาประดิษฐ์ (AI)</span>
+                <span class="interest-tag">🎨 UI/UX Design</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">ผลงานและกิจกรรม (Projects & Activities)</h2>
 
         <div class="project-card">
             <h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
-            
-            <img src="S__45228037.jpg" alt="ภาพผลงานที่ 1" class="portfolio-img">
-            
-            <p><strong>รายละเอียดชิ้นงาน :</strong> เขียนอธิบายสั้นๆ ว่าทำอย่างไร ได้เรียนรู้อะไรจากงานนี้บ้าง</p>
+            <img src="project1.jpg" alt="ภาพผลงานที่ 1" class="portfolio-img">
+            <p><strong>รายละเอียดชิ้นงาน :</strong> พัฒนาโปรแกรมคำนวณและประมวลผลข้อมูลเพื่อแก้ปัญหา... ได้เรียนรู้การเขียนโค้ด การแก้ปัญหาเชิงตรรกะ และการทำงานร่วมกับผู้อื่น</p>
         </div>
 
         <div class="project-card">
             <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-            
-            <img src="ใส่ลิงก์รูปภาพของคุณที่นี่.jpg" alt="ภาพกิจกรรมหรือเกียรติบัตร" class="portfolio-img">
-            
-            <p><strong>รายละเอียดชิ้นงาน :</strong> เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
+            <img src="certificate.jpg" alt="ภาพเกียรติบัตร" class="portfolio-img">
+            <p><strong>รายละเอียดชิ้นงาน :</strong> เข้าร่วมการแข่งขันวิชาการ/อบรมเชิงปฏิบัติการ ได้รับรางวัล... ช่วยฝึกทักษะการทำงานเป็นทีมและการนำเสนอผลงาน</p>
         </div>
 
-        <a href="index.html" class="btn">กลับหน้าแรก</a>
+        <div class="btn-group">
+            <a href="index.html" class="btn">กลับหน้าแรก</a>
+        </div>
+
     </div>
 
 </body>
