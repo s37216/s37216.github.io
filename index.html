@@ -52,10 +52,10 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 2px;                  
+            border-radius: 4px;                  
             object-fit: cover;
             background-color: #ffffff;
-            border: 4px solid #ffffff;           
+            border: 4px solid #ffffff;            
             outline: 1px solid #d1d5db;         
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
@@ -121,6 +121,13 @@
             line-height: 1.6;
         }
 
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
         .btn {
             position: relative;
             display: inline-flex;
@@ -136,7 +143,8 @@
             font-size: 15px;
             box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: float 2.5s ease-in-out infinite;
+            width: 100%;
+            max-width: 320px;
             overflow: hidden;
         }
 
@@ -170,15 +178,27 @@
             transform: translateX(5px);
         }
 
-        .btn:active {
-            transform: translateY(-1px) scale(0.98);
-            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
+        /* ส่วน Social Links เพิ่มเติมสำหรับ GitHub */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0px); }
+        .social-link {
+            font-size: 14px;
+            color: #4b5563;
+            text-decoration: none;
+            background: #f3f4f6;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: #e5e7eb;
+            color: #1f2937;
         }
 
         @keyframes fadeInUp {
@@ -219,14 +239,18 @@
             <p style="font-size: 13px; color: #4b5563; margin-top: 4px;">มุ่งมั่นพัฒนาทักษะการจัดการระบบ และ การเพิ่มประสิทธิภาพกระบวนการ</p>
         </div>
 
-        <a href="portfolio.html" class="btn">
-            ดูแฟ้มสะสมผลงาน (Portfolio)
-            <span class="arrow">➔</span>
-        </a>
-    </div>
+        <div class="btn-group">
+            <a href="portfolio.html" class="btn">
+                ดูแฟ้มสะสมผลงาน (Portfolio)
+                <span class="arrow">➔</span>
+            </a>
+        </div>
 
-</body>
-</html>
+        <!-- ช่องทางติดต่อหรือลิงก์ GitHub -->
+        <div class="social-links">
+            <a href="https://github.com/ชื่อยูสเซอร์เนมของคุณ" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:อีเมลของคุณ@gmail.com" class="social-link">Contact Email</a>
+        </div>
     </div>
 
 </body>
