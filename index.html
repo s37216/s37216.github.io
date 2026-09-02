@@ -17,7 +17,7 @@
         body {
             font-family: 'Prompt', sans-serif;
             background-color: #f5f3ff;
-             background-image: 
+            background-image: 
                 radial-gradient(at 10% 10%, rgba(224, 231, 255, 0.8) 0px, transparent 50%),
                 radial-gradient(at 90% 15%, rgba(243, 232, 255, 0.85) 0px, transparent 50%),
                 radial-gradient(at 80% 85%, rgba(254, 226, 226, 0.65) 0px, transparent 50%),
@@ -27,10 +27,10 @@
             background-attachment: fixed;
             color: #333;
             min-height: 100vh;
-            padding: 80px 20px 40px;
+            padding: 90px 20px 50px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .navbar {
@@ -65,40 +65,56 @@
             box-shadow: 0 4px 12px rgba(44, 62, 80, 0.25);
         }
 
+         .container {
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 28px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            max-width: 600px;
-            width: 100%;
-            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            padding: 30px;
             text-align: center;
             transition: all 0.3s ease;
             animation: fadeInUp 0.8s ease-out;
+            scroll-margin-top: 100px; 
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
         }
 
-        #home, #about, #interests {
-            scroll-margin-top: 100px;
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #eef2f7;
+            padding-bottom: 8px;
         }
 
         .profile-wrapper {
             position: relative;
-            width: 140px;       
-            height: 180px;      
-            margin: 0 auto 20px;
+            width: 130px;       
+            height: 165px;      
+            margin: 0 auto 16px;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 4px;                  
+            border-radius: 6px;                  
             object-fit: cover;
             background-color: #ffffff;
             border: 4px solid #ffffff;            
@@ -115,27 +131,25 @@
             color: #2c3e50;
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .english-name {
             font-size: 14px;
             color: #7f8c8d;
-            margin-bottom: 25px;
             font-weight: 400;
         }
 
-        .info-grid {
+         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 12px;
-            margin: 25px 0;
         }
 
         .info-box {
             background: rgba(248, 249, 250, 0.8);
             border: 1px solid #e9ecef;
-            padding: 12px 15px;
+            padding: 14px 15px;
             border-radius: 16px;
             text-align: center;
         }
@@ -157,14 +171,13 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 25px 0;
             text-align: left;
         }
 
         .detail-card {
             background: linear-gradient(135deg, rgba(238, 242, 247, 0.9) 0%, rgba(224, 231, 255, 0.9) 100%);
             border: 1px solid #c7d2fe;
-            padding: 15px 18px;
+            padding: 16px 18px;
             border-radius: 16px;
         }
 
@@ -183,10 +196,10 @@
             line-height: 1.6;
         }
 
-        .btn-group {
+         .btn-group {
             display: flex;
             justify-content: center;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .btn {
@@ -276,44 +289,51 @@
         <a href="#interests" class="nav-link">สนใจด้าน</a>
     </nav>
 
-    <div class="card">
-        <div id="home">
+    <div class="container">
+        
+        <div id="home" class="card">
             <div class="profile-wrapper">
                 <img src="student.jpg" alt="รูปโปรไฟล์ นายอัครินทร์" class="profile-img">
             </div>
-
             <h1>อัครินทร์ เสารยะวิเศษ</h1>
             <p class="english-name">Akarin Saorayawiset</p>
         </div>
 
-        <div id="about" class="info-grid">
-            <div class="info-box">
-                <span class="info-label">🏫 ระดับชั้น</span>
-                <span class="info-value">มัธยมศึกษาปีที่ 6</span>
-            </div>
-            <div class="info-box">
-                <span class="info-label">📚 แผนการเรียน</span>
-                <span class="info-value">วิทย์ - คณิต</span>
-            </div>
-        </div>
-
-        <div id="interests" class="details-section">
-            <div class="detail-card">
-                <h3>🎯 เป้าหมายในการศึกษาต่อ</h3>
-                <p>มีความมุ่งมั่นตั้งใจที่จะศึกษาต่อในระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (IE) ในมหาวิทยาลัยที่ใฝ่ฝัน เพื่อเตรียมความพร้อมสู่สายอาชีพวิศวกรมืออาชีพ</p>
-            </div>
-            <div class="detail-card">
-                <h3>💡 สิ่งที่สนใจและความตั้งใจในคณะ</h3>
-                <p>สนใจกระบวนการเพิ่มประสิทธิภาพการทำงาน การลดความสูญเปล่าในระบบการผลิต (Lean Manufacturing) ตลอดจนการประยุกต์ใช้เทคโนโลยีและการจัดการเชิงระบบเพื่อยกระดับอุตสาหกรรมให้ก้าวทันโลกยุคใหม่</p>
+        <div id="about" class="card">
+            <h2 class="section-title">👤 เกี่ยวกับฉัน</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span class="info-label">🏫 ระดับชั้น</span>
+                    <span class="info-value">มัธยมศึกษาปีที่ 6</span>
+                </div>
+                <div class="info-box">
+                    <span class="info-label">📚 แผนการเรียน</span>
+                    <span class="info-value">วิทย์ - คณิต</span>
+                </div>
             </div>
         </div>
 
-        <div class="btn-group">
-            <a href="portfolio.html" class="btn">
-                ดูแฟ้มสะสมผลงาน (Portfolio)
-                <span class="arrow">➔</span>
-            </a>
+        <div id="interests" class="card">
+            <h2 class="section-title">💡 ความสนใจและเป้าหมาย</h2>
+            <div class="details-section">
+                <div class="detail-card">
+                    <h3>🎯 เป้าหมายในการศึกษาต่อ</h3>
+                    <p>มีความมุ่งมั่นตั้งใจที่จะศึกษาต่อในระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (IE) ในมหาวิทยาลัยที่ใฝ่ฝัน เพื่อเตรียมความพร้อมสู่สายอาชีพวิศวกรมืออาชีพ</p>
+                </div>
+                <div class="detail-card">
+                    <h3>💡 สิ่งที่สนใจและความตั้งใจในคณะ</h3>
+                    <p>สนใจกระบวนการเพิ่มประสิทธิภาพการทำงาน การลดความสูญเปล่าในระบบการผลิต (Lean Manufacturing) ตลอดจนการประยุกต์ใช้เทคโนโลยีและการจัดการเชิงระบบเพื่อยกระดับอุตสาหกรรมให้ก้าวทันโลกยุคใหม่</p>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <a href="portfolio.html" class="btn">
+                    ดูแฟ้มสะสมผลงาน (Portfolio)
+                    <span class="arrow">➔</span>
+                </a>
+            </div>
         </div>
+
     </div>
 
 </body>
