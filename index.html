@@ -3,98 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแนะนำตัวของฉัน</title>
+    <title>หน้าแนะนำตัว | อัครินทร์ เสารยะวิเศษ</title>
+    <!-- โหลด Google Font: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            background: linear-gradient(135deg, #E6E6FA 0%, #D8BFD8 100%);
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #e6e6fa 0%, #d8bfd8 100%);
+            color: #333;
             min-height: 100vh;
+            padding: 30px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .card {
-            background: rgba(255, 228, 225, 0.95); 
-            border-radius: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            max-width: 650px; 
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
             width: 100%;
-            padding: 40px 40px; 
-            box-sizing: border-box;
-            transition: all 0.4s ease; 
-            animation: fadeInUp 1s ease-out; 
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
         }
 
-        .btn {
-            display: inline-block;
-            background: #2c3e50;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px; 
-            margin-top: 25px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
-            transition: all 0.3s ease;
-            animation: float 2.5s ease-in-out infinite; 
+        /* รูปโปรไฟล์นักเรียน */
+        .profile-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
         }
 
-        .btn:hover {
-            background: #34495e; 
-            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
-            letter-spacing: 1px; 
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         h1 {
-            color: #FF0000;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 28px;
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #4a4a4a;
-            margin: 10px 0;
+        .english-name {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        /* กล่องแสดงข้อมูลนักเรียน */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 20px 0 25px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 12px 15px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #6c757d;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #eef2f7 0%, #e0e7ff 100%);
+            border: 1px solid #c7d2fe;
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #3730a3;
+            line-height: 1.6;
+        }
+
+        /* ปุ่มกด */
+        .btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.25);
+            transition: all 0.3s ease;
+            animation: float 2.5s ease-in-out infinite;
+        }
+
+        .btn:hover {
+            background: #34495e;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
+            transform: translateY(-2px);
         }
 
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-6px); }
             100% { transform: translateY(0px); }
         }
 
         @keyframes fadeInUp {
-            0% {
+            from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
-            100% {
+            to {
                 opacity: 1;
-                transform: translateY(0px);
+                transform: translateY(0);
             }
         }
-</style>
+    </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 👋</h1>
-        <p>สวัสดีครับ! ผมชื่อ <strong>อัครินทร์ เสารยะวิเศษ (Akarin Saorayawiset)</strong></p>
-        <p>ขณะนี้กำลังศึกษา/สนใจด้าน Industrial Engineering (IE)</p>
-        <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-        <a href="portfolio.html" class="btn">ดูแฟ้มผลงานของฉัน</a>
-</div>
+        <!-- ใส่รูปชุดนักเรียน/รูปโปรไฟล์ตรงนี้ -->
+        <div class="profile-wrapper">
+            <img src="student.jpg" alt="รูปโปรไฟล์ นายอัครินทร์" class="profile-img">
+        </div>
+
+        <h1>อัครินทร์ เสารยะวิเศษ</h1>
+        <p class="english-name">Akarin Saorayawiset</p>
+
+        <!-- ส่วนข้อมูลการศึกษา -->
+        <div class="info-grid">
+            <div class="info-box">
+                <span class="info-label">🏫 ระดับชั้น</span>
+                <span class="info-value">มัธยมศึกษาปีที่ 6</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">📚 แผนการเรียน</span>
+                <span class="info-value">วิทย์ - คณิต</span>
+            </div>
+        </div>
+
+        <!-- ส่วนความสนใจหลัก -->
+        <div class="highlight-box">
+            <p>⚙️ <strong>สาขาที่สนใจ :</strong> วิศวกรรมอุตสาหการ (Industrial Engineering - IE)</p>
+            <p style="font-size: 13px; color: #4b5563; margin-top: 4px;">มุ่งมั่นพัฒนาทักษะการจัดการระบบ และ การเพิ่มประสิทธิภาพกระบวนการ</p>
+        </div>
+
+        <a href="portfolio.html" class="btn">ดูแฟ้มสะสมผลงาน (Portfolio)</a>
+    </div>
+
 </body>
 </html>
