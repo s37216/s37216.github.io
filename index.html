@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าแนะนำตัว | อัครินทร์ เสารยะวิเศษ</title>
-    <!-- โหลด Google Font: Prompt -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -43,21 +42,22 @@
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
         }
 
-        /* ปรับรูปเป็นสี่เหลี่ยมทรงรูปถ่ายติดบัตร (อัตราส่วน 3:4) ขนาดใหญ่ขึ้น */
         .profile-wrapper {
             position: relative;
-            width: 180px;
-            height: 230px;
+            width: 150px;       
+            height: 200px;      
             margin: 0 auto 20px;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 16px; /* ขอบมนเล็กน้อยให้ดูทันสมัย */
+            border-radius: 2px;                  
             object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            border: 4px solid #ffffff;           
+            outline: 1px solid #d1d5db;         
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
 
@@ -79,7 +79,6 @@
             font-weight: 400;
         }
 
-        /* กล่องแสดงข้อมูลนักเรียน */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -122,7 +121,6 @@
             line-height: 1.6;
         }
 
-        /* ปุ่มกดเพิ่มลูกเล่น (Shine Effect + Hover Interactive) */
         .btn {
             position: relative;
             display: inline-flex;
@@ -142,7 +140,6 @@
             overflow: hidden;
         }
 
-        /* เอฟเฟกต์แสงสะท้อนวิ่งผ่านปุ่ม (Shine Effect) */
         .btn::before {
             content: '';
             position: absolute;
@@ -154,7 +151,6 @@
             transition: left 0.6s ease;
         }
 
-        /* เอฟเฟกต์ลูกศรขยับเมื่อเอาเมาส์ชี้ */
         .btn span.arrow {
             display: inline-block;
             transition: transform 0.3s ease;
@@ -200,7 +196,6 @@
 <body>
 
     <div class="card">
-        <!-- กรอบรูปสี่เหลี่ยมทรงแนวตั้งสำหรับรูป 1-1.5 นิ้ว -->
         <div class="profile-wrapper">
             <img src="student.jpg" alt="รูปโปรไฟล์ นายอัครินทร์" class="profile-img">
         </div>
@@ -208,7 +203,6 @@
         <h1>อัครินทร์ เสารยะวิเศษ</h1>
         <p class="english-name">Akarin Saorayawiset</p>
 
-        <!-- ส่วนข้อมูลการศึกษา -->
         <div class="info-grid">
             <div class="info-box">
                 <span class="info-label">🏫 ระดับชั้น</span>
@@ -220,7 +214,6 @@
             </div>
         </div>
 
-        <!-- ส่วนความสนใจหลัก -->
         <div class="highlight-box">
             <p>⚙️ <strong>สาขาที่สนใจ :</strong> วิศวกรรมอุตสาหการ (Industrial Engineering - IE)</p>
             <p style="font-size: 13px; color: #4b5563; margin-top: 4px;">มุ่งมั่นพัฒนาทักษะการจัดการระบบ และ การเพิ่มประสิทธิภาพกระบวนการ</p>
@@ -230,6 +223,10 @@
             ดูแฟ้มสะสมผลงาน (Portfolio)
             <span class="arrow">➔</span>
         </a>
+    </div>
+
+</body>
+</html>
     </div>
 
 </body>
