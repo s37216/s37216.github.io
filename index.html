@@ -19,10 +19,42 @@
             background: linear-gradient(135deg, #e6e6fa 0%, #d8bfd8 100%);
             color: #333;
             min-height: 100vh;
-            padding: 30px 20px;
+            padding: 80px 20px 40px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 8px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: #2c3e50;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.25);
         }
 
         .card {
@@ -32,7 +64,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
-            padding: 35px 30px;
+            padding: 40px 30px;
             text-align: center;
             transition: all 0.3s ease;
             animation: fadeInUp 0.8s ease-out;
@@ -43,33 +75,8 @@
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
         }
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            background: rgba(238, 242, 247, 0.8);
-            padding: 6px;
-            border-radius: 50px;
-            border: 1px solid #e0e7ff;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 13.5px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 30px;
-            transition: all 0.25s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: #2c3e50;
-            color: #ffffff;
-            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+         #home, #about, #interests {
+            scroll-margin-top: 100px;
         }
 
         .profile-wrapper {
@@ -105,7 +112,7 @@
         .english-name {
             font-size: 14px;
             color: #7f8c8d;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 400;
         }
 
@@ -113,7 +120,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 12px;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .info-box {
@@ -141,7 +148,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 20px 0 25px;
+            margin: 25px 0;
             text-align: left;
         }
 
@@ -170,7 +177,7 @@
         .btn-group {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .btn {
@@ -240,18 +247,28 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 480px) {
+            .navbar {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+                width: 90%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="card">
-         <nav class="navbar">
-            <a href="#home" class="nav-link active">หน้าแรก</a>
-            <a href="#about" class="nav-link">เกี่ยวกับฉัน</a>
-            <a href="#interests" class="nav-link">สนใจด้าน</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-        </nav>
+    <nav class="navbar">
+        <a href="#home" class="nav-link active">หน้าแรก</a>
+        <a href="#about" class="nav-link">เกี่ยวกับฉัน</a>
+        <a href="#interests" class="nav-link">สนใจด้าน</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+    </nav>
 
+    <div class="card">
         <div id="home">
             <div class="profile-wrapper">
                 <img src="student.jpg" alt="รูปโปรไฟล์ นายอัครินทร์" class="profile-img">
