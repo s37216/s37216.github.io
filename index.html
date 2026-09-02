@@ -43,21 +43,26 @@
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
         }
 
-        /* รูปโปรไฟล์นักเรียน */
+        /* ปรับรูปเป็นสี่เหลี่ยมทรงรูปถ่ายติดบัตร (อัตราส่วน 3:4) ขนาดใหญ่ขึ้น */
         .profile-wrapper {
             position: relative;
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 230px;
             margin: 0 auto 20px;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
+            border-radius: 16px; /* ขอบมนเล็กน้อยให้ดูทันสมัย */
             object-fit: cover;
             border: 4px solid #ffffff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
         }
 
         h1 {
@@ -117,25 +122,61 @@
             line-height: 1.6;
         }
 
-        /* ปุ่มกด */
+        /* ปุ่มกดเพิ่มลูกเล่น (Shine Effect + Hover Interactive) */
         .btn {
-            display: inline-block;
-            background: #2c3e50;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #ffffff;
-            padding: 12px 35px;
+            padding: 14px 38px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 15px;
-            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.25);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: float 2.5s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        /* เอฟเฟกต์แสงสะท้อนวิ่งผ่านปุ่ม (Shine Effect) */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        /* เอฟเฟกต์ลูกศรขยับเมื่อเอาเมาส์ชี้ */
+        .btn span.arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            background: #34495e;
-            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.45);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover span.arrow {
+            transform: translateX(5px);
+        }
+
+        .btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
         }
 
         @keyframes float {
@@ -159,7 +200,7 @@
 <body>
 
     <div class="card">
-        <!-- ใส่รูปชุดนักเรียน/รูปโปรไฟล์ตรงนี้ -->
+        <!-- กรอบรูปสี่เหลี่ยมทรงแนวตั้งสำหรับรูป 1-1.5 นิ้ว -->
         <div class="profile-wrapper">
             <img src="student.jpg" alt="รูปโปรไฟล์ นายอัครินทร์" class="profile-img">
         </div>
@@ -185,7 +226,10 @@
             <p style="font-size: 13px; color: #4b5563; margin-top: 4px;">มุ่งมั่นพัฒนาทักษะการจัดการระบบ และ การเพิ่มประสิทธิภาพกระบวนการ</p>
         </div>
 
-        <a href="portfolio.html" class="btn">ดูแฟ้มสะสมผลงาน (Portfolio)</a>
+        <a href="portfolio.html" class="btn">
+            ดูแฟ้มสะสมผลงาน (Portfolio)
+            <span class="arrow">➔</span>
+        </a>
     </div>
 
 </body>
