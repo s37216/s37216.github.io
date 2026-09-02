@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | อัครินทร์ เสารยะวิเศษ</title>
-    <!-- โหลด Google Font: Prompt -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -19,43 +18,26 @@
             background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
             color: #2d3748;
             min-height: 100vh;
-            padding: 60px 25px; /* เพิ่มระยะห่างรอบนอก */
+            padding: 60px 25px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* ขยายขนาด Container ให้กว้างขึ้นและโปร่งสบายขึ้น */
         .portfolio-container {
-            max-width: 950px; /* ขยายความกว้างจาก 800px เป็น 950px */
+            max-width: 950px;
             width: 100%;
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
             border-radius: 28px;
-            padding: 55px 50px; /* เพิ่มพื้นที่ว่างภายในกล่อง */
+            padding: 55px 50px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
             animation: fadeIn 0.8s ease-out;
         }
 
-        /* ส่วนโปรไฟล์แนะนำตัว */
         .profile-section {
             text-align: center;
-            margin-bottom: 45px; /* เพิ่มระยะห่างด้านล่าง */
-        }
-
-        .profile-img {
-            width: 165px; /* ขยายขนาดรูปโปรไฟล์ */
-            height: 165px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.04);
+            margin-bottom: 45px;
         }
 
         h1 {
@@ -71,19 +53,18 @@
             margin-bottom: 24px;
         }
 
-        /* แท็กแสดงความสนใจ */
         .interests-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px; /* เพิ่มระยะห่างระหว่างแท็ก */
+            gap: 12px;
             margin-bottom: 15px;
         }
 
         .interest-tag {
             background: #ebf8ff;
             color: #2b6cb0;
-            padding: 8px 18px; /* เพิ่มพื้นที่ภายในแท็ก */
+            padding: 8px 18px;
             border-radius: 25px;
             font-size: 14px;
             font-weight: 600;
@@ -96,7 +77,6 @@
             transform: translateY(-2px);
         }
 
-        /* หัวข้อส่วน */
         .section-title {
             font-size: 20px;
             color: #2d3748;
@@ -107,13 +87,12 @@
             font-weight: 700;
         }
 
-        /* การ์ดผลงาน (เพิ่มพื้นที่และการจัดวาง) */
         .project-card {
             background: #ffffff;
             border: 1px solid #edf2f7;
             border-radius: 20px;
-            padding: 32px; /* เพิ่มระยะขอบด้านในการ์ด */
-            margin-bottom: 30px; /* เพิ่มระยะห่างระหว่างการ์ด */
+            padding: 32px;
+            margin-bottom: 30px;
             text-align: left;
             box-shadow: 0 6px 18px rgba(0,0,0,0.04);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -131,22 +110,12 @@
             font-weight: 600;
         }
 
-        .portfolio-img {
-            width: 100%;
-            height: 380px; /* เพิ่มความสูงของรูปผลงาน */
-            border-radius: 14px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-
         .project-card p {
             color: #4a5568;
             font-size: 16px;
             line-height: 1.7;
         }
 
-        /* กลุ่มปุ่มกดพร้อมลูกเล่น */
         .btn-group {
             display: flex;
             justify-content: center;
@@ -172,7 +141,6 @@
             overflow: hidden;
         }
 
-        /* แสงสะท้อนวิ่งผ่านปุ่ม (Shine Effect) */
         .btn::before {
             content: '';
             position: absolute;
@@ -184,7 +152,6 @@
             transition: left 0.6s ease;
         }
 
-        /* ลูกศรขยับเมื่อเมาส์ชี้ */
         .btn span.arrow {
             display: inline-block;
             transition: transform 0.3s ease;
@@ -201,7 +168,7 @@
         }
 
         .btn:hover span.arrow {
-            transform: translateX(-5px); /* ขยับลูกศรไปทางซ้ายสำหรับปุ่มย้อนกลับ */
+            transform: translateX(-5px);
         }
 
         .btn:active {
@@ -218,9 +185,7 @@
 
     <div class="portfolio-container">
         
-        <!-- ส่วนโปรไฟล์แนะนำตัว -->
         <div class="profile-section">
-            <img src="profile.jpg" alt="รูปโปรไฟล์นายอัครินทร์" class="profile-img">
             <h1>นายอัครินทร์ เสารยะวิเศษ</h1>
             <p class="subtitle">นักเรียนผู้มีความหลงใหลในเทคโนโลยีและการเรียนรู้สิ่งใหม่ๆ</p>
             
@@ -234,32 +199,22 @@
 
         <h2 class="section-title">ผลงานและกิจกรรม (Projects & Activities)</h2>
 
-        <!-- ผลงาน 1 -->
-        <div class="project-card">
+      <div class="project-card">
             <h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
-            <img src="project1.jpg" alt="ภาพผลงานที่ 1" class="portfolio-img">
             <p><strong>รายละเอียดชิ้นงาน :</strong> พัฒนาโปรแกรมคำนวณและประมวลผลข้อมูลเพื่อแก้ปัญหา... ได้เรียนรู้การเขียนโค้ด การแก้ปัญหาเชิงตรรกะ และการทำงานร่วมกับผู้อื่น</p>
         </div>
 
-        <!-- ผลงาน 2 -->
-        <div class="project-card">
+         <div class="project-card">
             <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-            <img src="certificate.jpg" alt="ภาพเกียรติบัตร" class="portfolio-img">
             <p><strong>รายละเอียดชิ้นงาน :</strong> เข้าร่วมการแข่งขันวิชาการ/อบรมเชิงปฏิบัติการ ได้รับรางวัล... ช่วยฝึกทักษะการทำงานเป็นทีมและการนำเสนอผลงาน</p>
         </div>
 
-        <!-- กลุ่มปุ่มกด -->
-        <div class="btn-group">
+         <div class="btn-group">
             <a href="index.html" class="btn">
                 <span class="arrow">⬅</span>
                 กลับหน้าแรก
             </a>
         </div>
-
-    </div>
-
-</body>
-</html>
 
     </div>
 
