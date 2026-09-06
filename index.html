@@ -142,16 +142,17 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
+            grid-template-columns: 2.2fr 1fr 1fr;
+            gap: 10px;
         }
 
         .info-box {
             background: rgba(248, 249, 250, 0.8);
             border: 1px solid #e9ecef;
-            padding: 14px 15px;
+            padding: 12px 6px;
             border-radius: 16px;
             text-align: center;
+            min-width: 0;
         }
 
         .info-label {
@@ -159,17 +160,18 @@
             color: #6c757d;
             display: block;
             margin-bottom: 4px;
+            white-space: nowrap;
         }
 
         .info-value {
-            font-size: 15px;
+            font-size: 13.5px;
             font-weight: 600;
             color: #2c3e50;
+            white-space: nowrap;
         }
 
-        /* กำหนดขนาดฟอนต์และห้ามขึ้นบรรทัดใหม่สำหรับชื่อโรงเรียน */
         .info-value-school {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
             color: #2c3e50;
             white-space: nowrap;
@@ -281,13 +283,21 @@
             }
         }
 
-        @media (max-width: 480px) {
+         @media (max-width: 520px) {
             .navbar {
                 top: 20px;
                 right: 50%;
                 transform: translateX(50%);
                 width: 90%;
                 justify-content: center;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .school-box {
+                grid-column: 1 / -1; 
             }
         }
     </style>
@@ -313,7 +323,7 @@
         <div id="about" class="card">
             <h2 class="section-title">👤 เกี่ยวกับฉัน</h2>
             <div class="info-grid">
-                <div class="info-box">
+                <div class="info-box school-box">
                     <span class="info-label">🏫 โรงเรียน</span>
                     <span class="info-value-school">บ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
                 </div>
