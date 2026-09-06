@@ -154,41 +154,6 @@
             text-align: center;
         }
 
-        .info-box.school-box {
-            grid-column: 1 / -1; 
-            background: linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(224, 231, 255, 0.8) 100%);
-            border: 1px solid #c7d2fe;
-            padding: 16px 20px;
-        }
-
-        .school-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 4px;
-        }
-
-        .school-name-main {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1e293b;
-        }
-
-        .school-badge {
-            background: #ffffff;
-            color: #2563eb;
-            border: 1.5px solid #3b82f6;
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
-            letter-spacing: 0.2px;
-            display: inline-block;
-        }
-
         .info-label {
             font-size: 12px;
             color: #6c757d;
@@ -200,6 +165,15 @@
             font-size: 15px;
             font-weight: 600;
             color: #2c3e50;
+        }
+
+        /* กำหนดขนาดฟอนต์และห้ามขึ้นบรรทัดใหม่สำหรับชื่อโรงเรียน */
+        .info-value-school {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+            display: inline-block;
         }
 
         .details-section {
@@ -339,14 +313,10 @@
         <div id="about" class="card">
             <h2 class="section-title">👤 เกี่ยวกับฉัน</h2>
             <div class="info-grid">
-               <div class="info-box school-box">
+                <div class="info-box">
                     <span class="info-label">🏫 โรงเรียน</span>
-                    <div class="school-container">
-                        <span class="school-name-main">บ้านบึง</span>
-                        <span class="school-badge">"อุตสาหกรรมนุเคราะห์"</span>
-                    </div>
+                    <span class="info-value-school">บ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
                 </div>
-                
                 <div class="info-box">
                     <span class="info-label">🎓 ระดับชั้น</span>
                     <span class="info-value">มัธยมศึกษาปีที่ 6</span>
