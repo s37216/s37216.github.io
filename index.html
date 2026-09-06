@@ -18,12 +18,18 @@
             font-family: 'Prompt', sans-serif;
             background-color: #f5f3ff;
             background-image: 
+                linear-gradient(to right, rgba(99, 102, 241, 0.08) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(99, 102, 241, 0.08) 1.5px, transparent 1.5px),
+                radial-gradient(rgba(124, 58, 237, 0.14) 1.5px, transparent 1.5px),
                 radial-gradient(at 10% 10%, rgba(224, 231, 255, 0.8) 0px, transparent 50%),
                 radial-gradient(at 90% 15%, rgba(243, 232, 255, 0.85) 0px, transparent 50%),
                 radial-gradient(at 80% 85%, rgba(254, 226, 226, 0.65) 0px, transparent 50%),
-                radial-gradient(at 15% 85%, rgba(221, 214, 254, 0.75) 0px, transparent 50%),
-                radial-gradient(rgba(100, 116, 139, 0.12) 1.2px, transparent 1.2px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+                radial-gradient(at 15% 85%, rgba(221, 214, 254, 0.75) 0px, transparent 50%);
+            background-size: 
+                32px 32px, 
+                32px 32px, 
+                20px 20px, 
+                100% 100%, 100% 100%, 100% 100%, 100% 100%;
             background-attachment: fixed;
             color: #333;
             min-height: 100vh;
@@ -283,7 +289,7 @@
             }
         }
 
-         @media (max-width: 520px) {
+        @media (max-width: 520px) {
             .navbar {
                 top: 20px;
                 right: 50%;
