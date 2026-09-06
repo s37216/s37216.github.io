@@ -96,11 +96,22 @@
             text-align: left;
             box-shadow: 0 6px 18px rgba(0,0,0,0.04);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
 
         .project-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 32px rgba(0,0,0,0.09);
+        }
+
+        .project-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .project-card h3 {
@@ -112,8 +123,21 @@
 
         .project-card p {
             color: #4a5568;
-            font-size: 16px;
+            font-size: 15.5px;
             line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .project-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .ie-highlight {
+            background: #f7fafc;
+            border-left: 4px solid #3182ce;
+            padding: 14px 18px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 14px;
         }
 
         .btn-group {
@@ -179,6 +203,15 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        @media (max-width: 600px) {
+            .portfolio-container {
+                padding: 30px 20px;
+            }
+            .project-card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -200,25 +233,31 @@
         <h2 class="section-title">ผลงานและกิจกรรม (Projects & Activities)</h2>
 
         <div class="project-card">
-            <h3>1. โครงงาน/ผลงานทางวิทยาศาสตร์และคณิตศาสตร์</h3>
+            <img src="C4EB96E4-4C3E-49F9-97F2-B0E811985FA0.png" alt="เข้าร่วมกิจกรรมบริหารธุรกิจ มหาวิทยาลัยบูรพา" class="project-img">
+            <h3>1. เข้าร่วมกิจกรรมวิชาการด้านการบริหารธุรกิจ (มหาวิทยาลัยบูรพา)</h3>
+            <p><strong>รายละเอียดกิจกรรม :</strong> เข้าร่วมโครงการเปิดบ้าน/แข่งขันวิชาการด้านการบริหารธุรกิจ ณ มหาวิทยาลัยบูรพา เพื่อเรียนรู้กระบวนการวางแผนเชิงยุทธศาสตร์ การบริหารจัดการทรัพยากร การวิเคราะห์ตลาด และระบบการดำเนินงานในองค์กร</p>
+            <div class="ie-highlight">
+                <p><strong>⚙️ ความเชื่อมโยงกับวิศวกรรมอุตสาหการ (Industrial Engineering) :</strong></p>
+                <p>วิศวกรรมอุตสาหการเป็นสาขาที่ผสานระหว่าง **"ศาสตร์ทางวิศวกรรม"** และ **"การบริหารจัดการธุรกิจ"** กิจกรรมนี้ช่วยฝึกกระบวนการคิดเชิงระบบ (Systematic Thinking) ทำให้เข้าใจเรื่องการบริหารห่วงโซ่อุปทาน (Supply Chain), การวิเคราะห์ต้นทุนทางเศรษฐศาสตร์วิศวกรรม (Engineering Economy) และการบริหารจัดการทรัพยากรให้เกิดประสิทธิภาพสูงสุด (Efficiency Optimization) ซึ่งเป็นหัวใจสำคัญในการปรับปรุงระบบอุตสาหกรรมยุคใหม่</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>2. โครงงาน/ผลงานทางวิทยาศาสตร์และคณิตศาสตร์</h3>
             <p><strong>รายละเอียดชิ้นงาน :</strong> พัฒนาโครงงานหรือชิ้นงานที่ประยุกต์ใช้หลักการทางวิทยาศาสตร์และคณิตศาสตร์ในการแก้ปัญหาเชิงระบบ ฝึกกระบวนการคิดวิเคราะห์ การเก็บข้อมูล และการทดลองอย่างเป็นระบบ</p>
         </div>
 
-         <div class="project-card">
-            <h3>2. กิจกรรมทางวิชาการและเกียรติบัตร</h3>
+        <div class="project-card">
+            <h3>3. กิจกรรมทางวิชาการและเกียรติบัตร</h3>
             <p><strong>รายละเอียดชิ้นงาน :</strong> เข้าร่วมการแข่งขันทางวิชาการ ค่ายอบรมเชิงปฏิบัติการ หรือกิจกรรมพัฒนาผู้เรียน ได้รับเกียรติบัตรรับรองความสามารถ ซึ่งช่วยฝึกฝนทักษะการทำงานร่วมกับผู้อื่นและการสื่อสาร</p>
         </div>
 
-         <div class="btn-group">
+        <div class="btn-group">
             <a href="index.html" class="btn">
                 <span class="arrow">⬅</span>
                 กลับหน้าแรก
             </a>
         </div>
-    </div>
-
-</body>
-</html>
     </div>
 
 </body>
