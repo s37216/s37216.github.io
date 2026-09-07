@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแนะนำตัว | อัครินทร์ เสารยะวิเศษ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>อัครินทร์ เสารยะวิเศษ | Personal Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --bg-color: #f0f3ff;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --primary-blue: #4f46e5;
+            --primary-purple: #7c3aed;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --soft-blue-bg: #e0e7ff;
+            --soft-purple-bg: #ede9fe;
+            --text-main: #1e1b4b;
+            --text-sub: #475569;
+            --border-color: #c7d2fe;
+            --shadow-sm: 0 4px 12px rgba(99, 102, 241, 0.08);
+            --shadow-lg: 0 16px 32px rgba(99, 102, 241, 0.12);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,24 +32,16 @@
 
         body {
             font-family: 'Prompt', sans-serif;
-            background-color: #f5f3ff;
+            background-color: var(--bg-color);
             background-image: 
-                linear-gradient(to right, rgba(99, 102, 241, 0.08) 1.5px, transparent 1.5px),
-                linear-gradient(to bottom, rgba(99, 102, 241, 0.08) 1.5px, transparent 1.5px),
-                radial-gradient(rgba(124, 58, 237, 0.14) 1.5px, transparent 1.5px),
-                radial-gradient(at 10% 10%, rgba(224, 231, 255, 0.8) 0px, transparent 50%),
-                radial-gradient(at 90% 15%, rgba(243, 232, 255, 0.85) 0px, transparent 50%),
-                radial-gradient(at 80% 85%, rgba(254, 226, 226, 0.65) 0px, transparent 50%),
-                radial-gradient(at 15% 85%, rgba(221, 214, 254, 0.75) 0px, transparent 50%);
-            background-size: 
-                32px 32px, 
-                32px 32px, 
-                20px 20px, 
-                100% 100%, 100% 100%, 100% 100%, 100% 100%;
+                radial-gradient(circle at 20% 20%, rgba(165, 180, 252, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(196, 181, 253, 0.25) 0%, transparent 40%),
+                radial-gradient(rgba(99, 102, 241, 0.12) 1.5px, transparent 1.5px);
+            background-size: 100% 100%, 100% 100%, 24px 24px;
             background-attachment: fixed;
-            color: #333;
+            color: var(--text-main);
             min-height: 100vh;
-            padding: 100px 20px 50px; 
+            padding: 90px 20px 50px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -41,147 +49,177 @@
 
         .navbar {
             position: fixed;
-            top: 20px; 
-            right: 20px;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
             display: flex;
-            gap: 6px;
+            gap: 8px;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            padding: 8px 12px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 6px 10px;
+            border-radius: 40px;
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
             z-index: 1000;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #4b5563;
+            color: var(--text-sub);
             font-size: 13px;
-            font-weight: 600;
-            padding: 8px 14px;
+            font-weight: 500;
+            padding: 8px 16px;
             border-radius: 30px;
             transition: all 0.25s ease;
         }
 
         .nav-link:hover,
         .nav-link.active {
-            background: #2c3e50;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.25);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
         }
 
         .container {
-            max-width: 600px;
+            max-width: 580px;
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.92);
+            background: var(--card-bg);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            padding: 30px;
+            border: 2.5px solid var(--border-color);
+            border-radius: 28px;
+            box-shadow: var(--shadow-sm);
+            padding: 28px;
             text-align: center;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out;
-            scroll-margin-top: 90px; 
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            scroll-margin-top: 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "✦";
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            color: #a5b4fc;
+            font-size: 16px;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
-        }
-
-        .section-title {
-            font-size: 18px;
-            color: #2c3e50;
-            font-weight: 700;
-            margin-bottom: 18px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 2px solid #eef2f7;
-            padding-bottom: 8px;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
 
         .profile-wrapper {
             position: relative;
-            width: 130px;        
-            height: 165px;      
+            width: 120px;
+            height: 150px;
             margin: 0 auto 16px;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 6px;                  
+            border-radius: 20px;
             object-fit: cover;
             background-color: #ffffff;
-            border: 4px solid #ffffff;            
-            outline: 1px solid #d1d5db;          
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            border: 3px solid #ffffff;
+            outline: 2.5px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
             transition: transform 0.3s ease;
         }
 
-        .profile-img:hover {
-            transform: scale(1.02);
+        .profile-wrapper::after {
+            content: "☁️";
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            font-size: 20px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 2px;
+            box-shadow: var(--shadow-sm);
         }
 
         h1 {
-            color: #2c3e50;
-            font-size: 24px;
+            color: var(--text-main);
+            font-size: 23px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            letter-spacing: -0.3px;
         }
 
         .english-name {
-            font-size: 14px;
-            color: #7f8c8d;
-            font-weight: 400;
+            font-size: 13.5px;
+            color: var(--accent-purple);
+            font-weight: 600;
+            background: var(--soft-purple-bg);
+            display: inline-block;
+            padding: 3px 14px;
+            border-radius: 20px;
+            margin-top: 4px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title span.badge {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 12px;
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: 2.2fr 1fr 1fr;
-            gap: 10px;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 12px;
         }
 
         .info-box {
-            background: rgba(248, 249, 250, 0.8);
-            border: 1px solid #e9ecef;
-            padding: 12px 6px;
-            border-radius: 16px;
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            padding: 14px 8px;
+            border-radius: 20px;
             text-align: center;
-            min-width: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: border-color 0.2s ease;
+        }
+
+        .info-box:hover {
+            border-color: var(--accent-purple);
         }
 
         .info-label {
-            font-size: 12px;
-            color: #6c757d;
+            font-size: 11.5px;
+            color: var(--text-sub);
             display: block;
             margin-bottom: 4px;
-            white-space: nowrap;
+            font-weight: 500;
         }
 
-        .info-value {
-            font-size: 13.5px;
+        .info-value, .info-value-school {
+            font-size: 13px;
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--primary-blue);
             white-space: nowrap;
-        }
-
-        .info-value-school {
-            font-size: 13.5px;
-            font-weight: 600;
-            color: #2c3e50;
-            white-space: nowrap;
-            display: inline-block;
         }
 
         .details-section {
@@ -192,33 +230,32 @@
         }
 
         .detail-card {
-            background: linear-gradient(135deg, rgba(238, 242, 247, 0.9) 0%, rgba(224, 231, 255, 0.9) 100%);
-            border: 1px solid #c7d2fe;
-            padding: 16px 18px;
-            border-radius: 16px;
+            background: linear-gradient(135deg, var(--soft-blue-bg) 0%, var(--soft-purple-bg) 100%);
+            border: 2px solid var(--border-color);
+            padding: 16px 20px;
+            border-radius: 20px;
         }
 
         .detail-card h3 {
             font-size: 14px;
-            color: #312e81;
+            color: var(--primary-purple);
             margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 6px;
+            font-weight: 600;
         }
 
         .detail-card p {
             font-size: 13.5px;
-            color: #4b5563;
-            line-height: 1.6;
+            color: var(--text-sub);
+            line-height: 1.65;
         }
 
-        .btn-group {
+         .btn-group {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            animation: fadeInUp 0.8s ease-out;
+            margin-top: 6px;
         }
 
         .btn {
@@ -227,75 +264,42 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
             color: #ffffff;
-            padding: 14px 38px;
+            padding: 14px 32px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 40px;
             font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.25);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: float 2.5s ease-in-out infinite;
-            overflow: hidden;
+            font-size: 14.5px;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+            transition: all 0.3s ease;
             width: 100%;
             max-width: 320px;
+            border: 2px solid #ffffff;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
+        .btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35);
         }
 
         .btn span.arrow {
             display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .btn:hover {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
-            transform: translateY(-3px) scale(1.03);
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            transition: transform 0.25s ease;
         }
 
         .btn:hover span.arrow {
-            transform: translateX(5px);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            transform: translateX(4px);
         }
 
         @media (max-width: 520px) {
+            body {
+                padding-top: 80px;
+            }
+
             .navbar {
-                top: 15px; 
-                right: 50%;
-                transform: translateX(50%);
                 width: 90%;
-                justify-content: center;
+                justify-content: space-around;
             }
 
             .info-grid {
@@ -303,7 +307,7 @@
             }
 
             .school-box {
-                grid-column: 1 / -1; 
+                grid-column: 1 / -1;
             }
         }
     </style>
@@ -313,7 +317,7 @@
     <nav class="navbar">
         <a href="#home" class="nav-link active">หน้าแรก</a>
         <a href="#about" class="nav-link">เกี่ยวกับฉัน</a>
-        <a href="#interests" class="nav-link">สนใจด้าน</a>
+        <a href="#interests" class="nav-link">เป้าหมาย</a>
     </nav>
 
     <div class="container">
@@ -323,11 +327,11 @@
                 <img src="S__49872901.jpg" alt="โปรไฟล์" class="profile-img">
             </div>
             <h1>อัครินทร์ เสารยะวิเศษ</h1>
-            <p class="english-name">Akarin Saorayawiset</p>
+            <span class="english-name">Akarin Saorayawiset</span>
         </div>
 
         <div id="about" class="card">
-            <h2 class="section-title">👤 เกี่ยวกับฉัน</h2>
+            <h2 class="section-title"><span class="badge">PROFILE</span> 👤 เกี่ยวกับฉัน</h2>
             <div class="info-grid">
                 <div class="info-box school-box">
                     <span class="info-label">🏫 โรงเรียน</span>
@@ -345,14 +349,14 @@
         </div>
 
         <div id="interests" class="card">
-            <h2 class="section-title">💡 ความสนใจและเป้าหมาย</h2>
+            <h2 class="section-title"><span class="badge">GOAL</span> 💡 ความสนใจและเป้าหมาย</h2>
             <div class="details-section">
                 <div class="detail-card">
                     <h3>🎯 เป้าหมายในการศึกษาต่อ</h3>
                     <p>มีความมุ่งมั่นตั้งใจที่จะศึกษาต่อในระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (IE) ในมหาวิทยาลัยที่ใฝ่ฝัน เพื่อเตรียมความพร้อมสู่สายอาชีพวิศวกรมืออาชีพ</p>
                 </div>
                 <div class="detail-card">
-                    <h3>💡 สิ่งที่สนใจและความตั้งใจในคณะ</h3>
+                    <h3>⚡ สิ่งที่สนใจและความตั้งใจในคณะ</h3>
                     <p>สนใจกระบวนการเพิ่มประสิทธิภาพการทำงาน การลดความสูญเปล่าในระบบการผลิต (Lean Manufacturing) ตลอดจนการประยุกต์ใช้เทคโนโลยีและการจัดการเชิงระบบเพื่อยกระดับอุตสาหกรรมให้ก้าวทันโลกยุคใหม่</p>
                 </div>
             </div>
