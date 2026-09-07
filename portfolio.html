@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio & Activities | อัครินทร์ เสารยะวิเศษ</title>
+    <title>หน้าแรก (Home) | อัครินทร์ เสารยะวิเศษ</title>
     
-    <meta name="description" content="แฟ้มสะสมผลงานและกิจกรรม นายอัครินทร์ เสารยะวิเศษ">
+    <meta name="description" content="เว็บไซต์ส่วนตัวและพอร์ตโฟลิโอ นายอัครินทร์ เสารยะวิเศษ">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,8 +64,8 @@
             pointer-events: none;
             opacity: 0.35;
         }
-        .glow-1 { top: -10%; right: -10%; width: 500px; height: 500px; background: #0891b2; }
-        .glow-2 { bottom: -10%; left: -10%; width: 600px; height: 600px; background: #4f46e5; }
+        .glow-1 { top: -10%; left: -10%; width: 550px; height: 550px; background: #4f46e5; }
+        .glow-2 { bottom: -10%; right: -10%; width: 600px; height: 600px; background: #0891b2; }
 
         .navbar {
             position: fixed;
@@ -84,25 +84,19 @@
             z-index: 100;
         }
 
-        .nav-link-back {
+        .nav-link {
             text-decoration: none;
-            color: var(--accent-cyan);
+            color: var(--text-main);
             font-size: 13px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            border-radius: 30px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
 
-        .nav-link-back:hover {
-            background: rgba(6, 182, 212, 0.25);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-            transform: translateX(-2px);
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.1);
         }
 
         .nav-title {
@@ -145,51 +139,55 @@
             opacity: 0.7;
         }
 
-        .portfolio-header {
-            text-align: center;
-        }
-
-        .portfolio-header h1 {
-            font-size: 30px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-        }
-
-        .portfolio-header .subtitle {
-            font-family: var(--font-code);
-            color: var(--accent-cyan);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .cyber-tag {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: var(--primary-glow);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 12.5px;
-            font-weight: 500;
+        .profile-hero {
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
+            gap: 32px;
         }
 
-        .cyber-tag:hover {
-            background: rgba(99, 102, 241, 0.25);
-            border-color: var(--accent-cyan);
+        .profile-avatar-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--accent-cyan);
+        }
+
+        .profile-info h1 {
+            font-size: 28px;
+            font-weight: 700;
             color: #ffffff;
-            transform: translateY(-2px);
+            margin-bottom: 4px;
+        }
+
+        .profile-info .badge-role {
+            display: inline-block;
+            font-family: var(--font-code);
+            font-size: 12px;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .profile-info p {
+            color: var(--text-sub);
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         .section-header {
@@ -199,7 +197,7 @@
             font-size: 20px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
             padding-bottom: 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -213,131 +211,95 @@
             font-size: 16px;
         }
 
-        .project-card {
+        .grid-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-item {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 28px;
-            margin-bottom: 24px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-
-        .project-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .project-card:hover {
-            border-color: var(--border-glow);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .project-badge-type {
-            display: inline-block;
-            font-family: var(--font-code);
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent-cyan);
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.25);
-            padding: 3px 10px;
-            border-radius: 6px;
-            margin-bottom: 14px;
-        }
-
-        .image-frame {
-            position: relative;
-            width: 100%;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: #0f172a;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-
-        .project-img {
-            width: 100%;
-            max-height: 480px;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.02);
-        }
-
-        .project-card h3 {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .project-card p {
-            color: var(--text-sub);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .ie-highlight {
-            margin-top: 16px;
-            background: rgba(99, 102, 241, 0.08);
-            border-left: 3px solid var(--primary-glow);
-            padding: 12px 16px;
-            border-radius: 0 10px 10px 0;
-            font-size: 13px;
-            color: #e2e8f0;
-        }
-
-        .ie-highlight i {
-            color: var(--accent-cyan);
-            margin-right: 6px;
-        }
-
-        .cta-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .btn-cyber-back {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            max-width: 320px;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14.5px;
-            border-radius: 99px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 18px;
             transition: all 0.3s ease;
         }
 
-        .btn-cyber-back:hover {
-            border-color: var(--accent-cyan);
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        .skill-item:hover {
+            border-color: var(--border-glow);
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.25);
+            background: rgba(255, 255, 255, 0.04);
         }
 
-        .btn-cyber-back i {
+        .skill-item h4 {
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-item h4 i {
+            color: var(--primary-glow);
+        }
+
+        .skill-item p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .nav-portfolio-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-portfolio-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.2);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.25) 100%);
+        }
+
+        .nav-portfolio-content h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-portfolio-content p {
+            font-size: 13.5px;
+            color: var(--text-sub);
+        }
+
+        .btn-go {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            color: #0a0d14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
 
-        .btn-cyber-back:hover i {
-            transform: translateX(-6px);
+        .nav-portfolio-card:hover .btn-go {
+            transform: translateX(6px);
         }
 
         .footer {
@@ -352,8 +314,9 @@
         @media (max-width: 640px) {
             .main-wrapper { padding: 100px 16px 40px; }
             .cyber-card { padding: 24px; }
-            .project-card { padding: 18px; }
-            .portfolio-header h1 { font-size: 24px; }
+            .profile-hero { flex-direction: column; text-align: center; gap: 18px; }
+            .profile-info .badge-role { margin: 0 auto 12px; }
+            .nav-portfolio-card { flex-direction: column; text-align: center; }
             .nav-title { display: none; }
         }
     </style>
@@ -366,75 +329,63 @@
     <div class="glow-orb glow-2"></div>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-link-back">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>กลับหน้าแรก</span>
-        </a>
-        <span class="nav-title">/ PORTFOLIO & ACTIVITIES</span>
+        <a href="index.html" class="nav-link active">หน้าแรก</a>
+        <a href="portfolio.html" class="nav-link">ผลงาน & กิจกรรม</a>
+        <span class="nav-title">/ AKARIN S.</span>
     </nav>
 
     <main class="main-wrapper">
 
         <section class="cyber-card">
-            <div class="portfolio-header">
-                <h1>นายอัครินทร์ เสารยะวิเศษ</h1>
-                <div class="subtitle">PORTFOLIO & ACADEMIC ACTIVITIES LOG</div>
-                
-                <div class="tags-container">
-                    <span class="cyber-tag"><i class="fa-solid fa-calculator"></i> คณิตศาสตร์</span>
-                    <span class="cyber-tag"><i class="fa-solid fa-flask"></i> วิทยาศาสตร์และเทคโนโลยี</span>
-                    <span class="cyber-tag"><i class="fa-solid fa-gear"></i> วิศวกรรมอุตสาหการ</span>
-                    <span class="cyber-tag"><i class="fa-solid fa-chart-pie"></i> บริหารจัดการระบบ</span>
+            <div class="profile-hero">
+                <div class="profile-avatar-wrapper">
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1>นายอัครินทร์ เสารยะวิเศษ</h1>
+                    <span class="badge-role">FUTURE INDUSTRIAL ENGINEER</span>
+                    <p>มุ่งมั่นพัฒนาความรู้ด้านวิทยาศาสตร์ คณิตศาสตร์ เทคโนโลยี และการบริหารจัดการระบบอุตสาหกรรม เพื่อประยุกต์ใช้ในการเพิ่มประสิทธิภาพองค์กรอย่างยั่งยืน</p>
                 </div>
             </div>
         </section>
 
         <section class="cyber-card">
             <div class="section-header">
-                <i class="fa-solid fa-diagram-project"></i>
-                <span>รายการผลงานและกิจกรรม (Projects & Activities)</span>
+                <i class="fa-solid fa-bullseye"></i>
+                <span>ความสนใจและเป้าหมาย (Fields of Interest)</span>
             </div>
 
-            <article class="project-card">
-                <span class="project-badge-type">[ OPEN HOUSE & WORKSHOP ]</span>
-                
-                <div class="image-frame">
-                    <img src="47F25AEF-EE5C-41C5-806C-11C6F1355588.png" alt="เกียรติบัตร KMITL Open House" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80'">
+            <div class="grid-skills">
+                <div class="skill-item">
+                    <h4><i class="fa-solid fa-gear"></i> วิศวกรรมอุตสาหการ</h4>
+                    <p>การออกแบบ พัฒนา และปรับปรุงระบบการทำงานให้มีประสิทธิภาพสูงสุด</p>
                 </div>
-
-                <h3>1. เข้าร่วมกิจกรรมเปิดบ้านวิชาการ KMITL Open House (สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง)</h3>
-                <p><strong>รายละเอียดกิจกรรม :</strong> เข้าร่วมงานเปิดบ้านวิชาการเพื่อเข้าชมการแสดงผลงาน นวัตกรรม และห้องปฏิบัติการจริงของสาขาวิชาวิศวกรรมอุตสาหการ พร้อมทั้งร่วมฟังการแนะแนวหลักสูตรและสอบถามประสบการณ์ตรงจากอาจารย์ประจำสาขาและรุ่นพี่นักศึกษา</p>
-                
-                <div class="ie-highlight">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <strong>IE Connection:</strong> เพิ่มพูนความรู้เกี่ยวกับกระบวนการผลิต นวัตกรรมระบบอุตสาหกรรม และแนวทางปฏิบัติตามมาตรฐานงานวิศวกรรมจริง
+                <div class="skill-item">
+                    <h4><i class="fa-solid fa-calculator"></i> คณิตศาสตร์ประยุกต์</h4>
+                    <p>การคำนวณ วิเคราะห์ข้อมูลเชิงสถิติ และแบบจำลองเพื่อแก้ปัญหา</p>
                 </div>
-            </article>
-
-            <article class="project-card">
-                <span class="project-badge-type">[ BUSINESS & MANAGEMENT ]</span>
-                
-                <div class="image-frame">
-                    <img src="C4EB96E4-4C3E-49F9-97F2-B0E811985FA0.png" alt="เข้าร่วมกิจกรรมบริหารธุรกิจ มหาวิทยาลัยบูรพา" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80'">
+                <div class="skill-item">
+                    <h4><i class="fa-solid fa-chart-line"></i> การบริหารทรัพยากร</h4>
+                    <p>การวางแผน ควบคุมต้นทุน เวลา และการจัดการในองค์กรอย่างมีระบบ</p>
                 </div>
-
-                <h3>2. เข้าร่วมกิจกรรมวิชาการด้านการบริหารธุรกิจ (มหาวิทยาลัยบูรพา)</h3>
-                <p><strong>รายละเอียดกิจกรรม :</strong> เข้าร่วมโครงการเปิดบ้าน/แข่งขันวิชาการด้านการบริหารธุรกิจ ณ มหาวิทยาลัยบูรพา เพื่อเรียนรู้กระบวนการวางแผนเชิงยุทธศาสตร์ การบริหารจัดการทรัพยากร การวิเคราะห์ตลาด และระบบการดำเนินงานในองค์กร</p>
-                
-                <div class="ie-highlight">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <strong>IE Connection:</strong> ต่อยอดทักษะการบริหารจัดการทรัพยากรมนุษย์ ต้นทุน และเวลา เพื่อเสริมสร้างรากฐานด้านการวิเคราะห์ระบบในองค์กร
+                <div class="skill-item">
+                    <h4><i class="fa-solid fa-microchip"></i> เทคโนโลยี & นวัตกรรม</h4>
+                    <p>การประยุกต์ใช้เทคโนโลยีสมัยใหม่ในกระบวนการอุตสาหกรรม</p>
                 </div>
-            </article>
-
+            </div>
         </section>
 
-        <div class="cta-container">
-            <a href="index.html" class="btn-cyber-back">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>ย้อนกลับไปหน้าหลัก (Home)</span>
-            </a>
-        </div>
+        <a href="portfolio.html" class="nav-portfolio-card">
+            <div class="nav-portfolio-content">
+                <h3><i class="fa-solid fa-folder-open"></i> เข้าชมแฟ้มสะสมผลงาน (Portfolio & Activities Log)</h3>
+                <p>รวบรวมกิจกรรมการเข้าร่วม Open House, เวิร์กชอป และกิจกรรมวิชาการด้านการบริหารธุรกิจและวิศวกรรม</p>
+            </div>
+            <div class="btn-go">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </a>
 
         <footer class="footer">
             <p>© 2026 Akarin Saorayawiset • Portfolio System Log</p>
@@ -513,7 +464,5 @@
 
         animate();
     </script>
-</body>
-</html>
 </body>
 </html>
