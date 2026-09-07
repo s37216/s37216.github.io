@@ -15,18 +15,18 @@
 
     <style>
         :root {
-            --bg-base: #faf7f5;
-            --bg-card: rgba(255, 255, 255, 0.85);
-            --border-card: #ffe3ec;
-            --border-glow: #ffd1dc;
-            --primary-pink: #ff85a2;
-            --soft-pink: #ffb6c1;
-            --pastel-blue: #a0c4ff;
-            --pastel-yellow: #fdffb6;
-            --pastel-purple: #bdb2ff;
-            --pastel-green: #caffbf;
-            --text-main: #4a4e69;
-            --text-sub: #7a7d9d;
+            --bg-base: #f0f6ff;
+            --bg-card: rgba(255, 255, 255, 0.88);
+            --border-card: #d2e4ff;
+            --border-glow: #b3d4ff;
+            --primary-blue: #4a90e2;
+            --soft-blue: #a0c8ff;
+            --pastel-blue: #b9d8ff;
+            --pastel-yellow: #fef08a;
+            --pastel-purple: #ddd6fe;
+            --pastel-green: #bbf7d0;
+            --text-main: #334155;
+            --text-sub: #64748b;
             --font-main: 'Prompt', sans-serif;
             --font-cute: 'Mali', cursive;
             --font-code: 'JetBrains Mono', monospace;
@@ -67,9 +67,9 @@
             pointer-events: none;
             opacity: 0.55;
         }
-        .glow-1 { top: -10%; left: -5%; width: 450px; height: 450px; background: #ffe5ec; }
-        .glow-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: #e7f0ff; }
-        .glow-3 { top: 40%; left: 30%; width: 350px; height: 350px; background: #f3e8ff; }
+        .glow-1 { top: -10%; left: -5%; width: 450px; height: 450px; background: #e0f2fe; }
+        .glow-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: #dbeafe; }
+        .glow-3 { top: 40%; left: 30%; width: 350px; height: 350px; background: #eef6ff; }
 
         .navbar {
             position: fixed;
@@ -79,12 +79,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(16px);
             padding: 8px 18px;
             border-radius: 99px;
             border: 2px solid var(--border-card);
-            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.25);
+            box-shadow: 0 10px 25px rgba(147, 197, 253, 0.25);
             z-index: 100;
         }
 
@@ -123,8 +123,8 @@
         }
 
         .nav-link:hover, .nav-link.active {
-            color: var(--primary-pink);
-            background: #fff0f3;
+            color: var(--primary-blue);
+            background: #eef6ff;
             font-weight: 600;
         }
 
@@ -145,7 +145,7 @@
             border: 2px solid var(--border-card);
             border-radius: 28px;
             padding: 32px;
-            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.18);
+            box-shadow: 0 15px 35px rgba(147, 197, 253, 0.18);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -153,8 +153,8 @@
 
         .cyber-card:hover {
             transform: translateY(-3px);
-            border-color: var(--soft-pink);
-            box-shadow: 0 20px 40px rgba(255, 133, 162, 0.22);
+            border-color: var(--soft-blue);
+            box-shadow: 0 20px 40px rgba(74, 144, 226, 0.22);
         }
 
         .hero-layout {
@@ -174,8 +174,8 @@
             height: 175px;
             border-radius: 24px;
             padding: 5px;
-            background: linear-gradient(135deg, var(--soft-pink), var(--pastel-blue));
-            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.35);
+            background: linear-gradient(135deg, #a5f3fc, #93c5fd);
+            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.35);
         }
 
         .profile-img {
@@ -192,21 +192,21 @@
             left: 50%;
             transform: translateX(-50%);
             background: #ffffff;
-            border: 1.5px solid var(--primary-pink);
-            color: var(--primary-pink);
+            border: 1.5px solid var(--primary-blue);
+            color: var(--primary-blue);
             font-family: var(--font-cute);
             font-size: 11px;
             font-weight: 700;
             padding: 3px 12px;
             border-radius: 20px;
             white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(255, 133, 162, 0.2);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
         }
 
         .hero-details h1 {
             font-size: 26px;
             font-weight: 700;
-            color: #333652;
+            color: #1e293b;
             margin-bottom: 2px;
             display: flex;
             align-items: center;
@@ -215,7 +215,7 @@
 
         .english-title {
             font-family: var(--font-cute);
-            color: var(--primary-pink);
+            color: var(--primary-blue);
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 14px;
@@ -228,8 +228,8 @@
         }
 
         .pill {
-            background: #fff5f7;
-            border: 1.5px solid #ffe3ec;
+            background: #f0f7ff;
+            border: 1.5px solid #d2e4ff;
             color: var(--text-main);
             padding: 5px 12px;
             border-radius: 12px;
@@ -240,21 +240,21 @@
             gap: 6px;
         }
 
-        .pill i { color: var(--primary-pink); }
+        .pill i { color: var(--primary-blue); }
 
         .sanrio-spec-box {
             background: #ffffff;
-            border: 2px solid #60a5fa;
+            border: 2px solid var(--border-card);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(96, 165, 250, 0.22);
+            box-shadow: 0 12px 30px rgba(147, 197, 253, 0.2);
             position: relative;
             transition: all 0.3s ease;
         }
 
         .sanrio-spec-box:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 16px 36px rgba(59, 130, 246, 0.28);
+            border-color: var(--soft-blue);
+            box-shadow: 0 16px 36px rgba(74, 144, 226, 0.25);
         }
 
         .sanrio-spec-header {
@@ -272,15 +272,15 @@
         }
 
         .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-red { background: #f87171; }
-        .dot-yellow { background: #fbbf24; }
-        .dot-green { background: #34d399; }
+        .dot-red { background: #93c5fd; }
+        .dot-yellow { background: #bfdbfe; }
+        .dot-green { background: #60a5fa; }
 
         .spec-title {
             font-family: var(--font-code);
             font-size: 13.5px;
             font-weight: 700;
-            color: #1e40af;
+            color: #1d4ed8;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -291,32 +291,31 @@
             font-family: var(--font-code);
             font-size: 14px;
             line-height: 2;
-            background: #f0f9ff;
+            background: #f8fafc;
         }
 
         .s-key { 
-            color: #1d4ed8; 
-            font-weight: 700; 
+            color: #2563eb; 
+            font-weight: 600; 
         }
 
         .s-val { 
             color: #0284c7; 
-            font-weight: 600; 
+            font-weight: 500; 
         }
 
         .s-str { 
-            color: #0f172a; 
-            font-weight: 600; 
+            color: #334155; 
+            font-weight: 500; 
         }
 
         .s-badge {
-            background: #dbeafe;
-            color: #1e40af;
-            border: 1px solid #bfdbfe;
-            padding: 2px 10px;
-            border-radius: 8px;
-            font-weight: 700;
-            display: inline-block;
+            color: #2563eb;
+            font-weight: 600;
+            display: inline;
+            padding: 0;
+            background: transparent;
+            border: none;
         }
 
         .section-header {
@@ -325,16 +324,16 @@
             gap: 10px;
             font-size: 18px;
             font-weight: 700;
-            color: #333652;
+            color: #1e293b;
             margin-bottom: 20px;
         }
 
         .section-header i {
-            color: var(--primary-pink);
-            background: #fff0f3;
+            color: var(--primary-blue);
+            background: #eef6ff;
             padding: 8px 12px;
             border-radius: 14px;
-            border: 1.5px solid #ffe3ec;
+            border: 1.5px solid #d2e4ff;
             font-size: 16px;
         }
 
@@ -346,7 +345,7 @@
 
         .info-card {
             background: #ffffff;
-            border: 1.5px solid #ffe3ec;
+            border: 1.5px solid #d2e4ff;
             padding: 16px 12px;
             border-radius: 20px;
             text-align: center;
@@ -354,14 +353,14 @@
         }
 
         .info-card:hover {
-            background: #fff5f7;
-            border-color: var(--soft-pink);
+            background: #f0f7ff;
+            border-color: var(--soft-blue);
             transform: translateY(-2px);
         }
 
         .info-icon {
             font-size: 20px;
-            color: var(--primary-pink);
+            color: var(--primary-blue);
             margin-bottom: 6px;
         }
 
@@ -387,7 +386,7 @@
 
         .interest-card {
             background: #ffffff;
-            border: 1.5px solid #ffe3ec;
+            border: 1.5px solid #d2e4ff;
             padding: 18px;
             border-radius: 20px;
             display: flex;
@@ -397,14 +396,14 @@
         }
 
         .interest-card:hover {
-            border-color: var(--soft-pink);
+            border-color: var(--soft-blue);
             transform: translateX(4px);
-            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15);
+            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.2);
         }
 
         .interest-icon {
-            background: #fff0f3;
-            color: var(--primary-pink);
+            background: #eef6ff;
+            color: var(--primary-blue);
             width: 42px;
             height: 42px;
             border-radius: 14px;
@@ -413,7 +412,7 @@
             justify-content: center;
             font-size: 18px;
             flex-shrink: 0;
-            border: 1.5px solid #ffe3ec;
+            border: 1.5px solid #d2e4ff;
         }
 
         .interest-content h3 {
@@ -444,13 +443,13 @@
             width: 100%;
             max-width: 360px;
             padding: 15px 30px;
-            background: linear-gradient(135deg, #ff85a2 0%, #a0c4ff 100%);
+            background: linear-gradient(135deg, #4a90e2 0%, #70a6ff 100%);
             color: #ffffff;
             text-decoration: none;
             font-weight: 700;
             font-size: 14.5px;
             border-radius: 99px;
-            box-shadow: 0 10px 25px rgba(255, 133, 162, 0.35);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.35);
             overflow: hidden;
             transition: all 0.3s ease;
             border: 2px solid #ffffff;
@@ -458,7 +457,7 @@
 
         .btn-cyber:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(255, 133, 162, 0.45);
+            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.45);
         }
 
         .btn-cyber i {
@@ -520,10 +519,10 @@
                     <div class="profile-frame">
                         <img src="S__49872901.jpg" alt="อัครินทร์ เสารยะวิเศษ" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
                     </div>
-                    <div class="tech-badge">🎀 IE ASPIRANT</div>
+                    <div class="tech-badge">☁️ IE ASPIRANT</div>
                 </div>
                 <div class="hero-details">
-                    <h1>อัครินทร์ เสารยะวิเศษ <i class="fa-solid fa-heart" style="color: var(--primary-pink); font-size: 18px;"></i></h1>
+                    <h1>อัครินทร์ เสารยะวิเศษ <i class="fa-solid fa-cloud" style="color: var(--primary-blue); font-size: 18px;"></i></h1>
                     <div class="english-title">Akarin Saorayawiset</div>
                     <div class="pill-group">
                         <span class="pill"><i class="fa-solid fa-graduation-cap"></i> ม.6 วิทย์-คณิต</span>
@@ -534,7 +533,7 @@
             </div>
         </section>
 
-         <section class="sanrio-spec-box">
+        <section class="sanrio-spec-box">
             <div class="sanrio-spec-header">
                 <div class="spec-dots">
                     <span class="dot dot-red"></span>
@@ -547,10 +546,10 @@
                 <div style="width: 30px;"></div>
             </div>
             <div class="spec-body">
-                <div><span class="s-key">ชื่อ</span>: <span class="s-str">"อัครินทร์ เสารยะวิเศษ"</span>,</div>
-                <div><span class="s-key">คณะที่อยากเข้า</span>: <span class="s-str">"วิศวกรรมศาสตร์ (วิศวกรรมอุตสาหการ)"</span>,</div>
-                <div><span class="s-key">ทักษะ</span>: [<span class="s-val">"การทำงานเป็นทีม"</span>, <span class="s-val">"มีไหวพริบ"</span>, <span class="s-val">"การแก้ไขปัญหา"</span>],</div>
-                <div><span class="s-key">มหาลัยที่อยากเข้า</span>: <span class="s-badge">"สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง🌸"</span></div>
+                <div><span class="s-key">ชื่อ</span>: <span class="s-str">อัครินทร์ เสารยะวิเศษ</span>,</div>
+                <div><span class="s-key">คณะที่อยากเข้า</span>: <span class="s-str">วิศวกรรมศาสตร์ (วิศวกรรมอุตสาหการ)</span>,</div>
+                <div><span class="s-key">ทักษะ</span>: [<span class="s-val">การทำงานเป็นทีม</span>, <span class="s-val">มีไหวพริบ</span>, <span class="s-val">การแก้ไขปัญหา</span>],</div>
+                <div><span class="s-key">มหาลัยที่อยากเข้า</span>: <span class="s-badge">"สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง🩵"</span></div>
             </div>
         </section>
 
@@ -614,7 +613,7 @@
         </div>
 
         <footer class="footer">
-            <p>© 2026 Akarin Saorayawiset • Style 🎀</p>
+            <p>© 2026 Akarin Saorayawiset • Sanrio  Style ☁️</p>
         </footer>
 
     </main>
@@ -654,7 +653,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 133, 162, 0.4)';
+                ctx.fillStyle = 'rgba(74, 144, 226, 0.35)';
                 ctx.fill();
             }
         }
@@ -679,7 +678,7 @@
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(255, 182, 193, ${0.25 - distance / 1000})`;
+                        ctx.strokeStyle = `rgba(160, 200, 255, ${0.25 - distance / 1000})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
