@@ -18,13 +18,10 @@
             --bg-base: #f0f6ff;
             --bg-card: rgba(255, 255, 255, 0.88);
             --border-card: #d2e4ff;
-            --border-glow: #b3d4ff;
+            --border-glow: #70a6ff;
             --primary-blue: #4a90e2;
             --soft-blue: #a0c8ff;
-            --pastel-blue: #b9d8ff;
-            --pastel-yellow: #fef08a;
-            --pastel-purple: #ddd6fe;
-            --pastel-green: #bbf7d0;
+            --accent-cyan: #0284c7;
             --text-main: #334155;
             --text-sub: #64748b;
             --font-main: 'Prompt', sans-serif;
@@ -67,9 +64,9 @@
             pointer-events: none;
             opacity: 0.55;
         }
-        .glow-1 { top: -10%; left: -5%; width: 450px; height: 450px; background: #e0f2fe; }
-        .glow-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: #dbeafe; }
-        .glow-3 { top: 40%; left: 30%; width: 350px; height: 350px; background: #eef6ff; }
+        .glow-1 { top: -10%; left: -5%; width: 500px; height: 500px; background: #e0f2fe; }
+        .glow-2 { bottom: -10%; right: -5%; width: 550px; height: 550px; background: #dbeafe; }
+        .glow-3 { top: 35%; left: 25%; width: 400px; height: 400px; background: #eef6ff; }
 
         .navbar {
             position: fixed;
@@ -131,7 +128,7 @@
         .main-wrapper {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 110px 20px 50px;
             display: flex;
@@ -152,7 +149,6 @@
         }
 
         .cyber-card:hover {
-            transform: translateY(-3px);
             border-color: var(--soft-blue);
             box-shadow: 0 20px 40px rgba(74, 144, 226, 0.22);
         }
@@ -160,7 +156,7 @@
         .hero-layout {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 32px;
         }
 
         .profile-container {
@@ -170,12 +166,17 @@
 
         .profile-frame {
             position: relative;
-            width: 140px;
-            height: 175px;
+            width: 150px;
+            height: 185px;
             border-radius: 24px;
             padding: 5px;
-            background: linear-gradient(135deg, #a5f3fc, #93c5fd);
-            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.35);
+            background: linear-gradient(135deg, #70a6ff 0%, #a5f3fc 100%);
+            box-shadow: 0 10px 25px rgba(147, 197, 253, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-container:hover .profile-frame {
+            transform: scale(1.03) rotate(1deg);
         }
 
         .profile-img {
@@ -197,20 +198,23 @@
             font-family: var(--font-cute);
             font-size: 11px;
             font-weight: 700;
-            padding: 3px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
             white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .hero-details h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 2px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .english-title {
@@ -218,7 +222,7 @@
             color: var(--primary-blue);
             font-size: 15px;
             font-weight: 600;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .pill-group {
@@ -231,13 +235,20 @@
             background: #f0f7ff;
             border: 1.5px solid #d2e4ff;
             color: var(--text-main);
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 14px;
+            font-size: 12.5px;
             font-weight: 500;
             display: flex;
             align-items: center;
             gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .pill:hover {
+            background: #e0f2fe;
+            border-color: var(--soft-blue);
+            transform: translateY(-2px);
         }
 
         .pill i { color: var(--primary-blue); }
@@ -245,7 +256,7 @@
         .sanrio-spec-box {
             background: #ffffff;
             border: 2px solid var(--border-card);
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 12px 30px rgba(147, 197, 253, 0.2);
             position: relative;
@@ -278,7 +289,7 @@
 
         .spec-title {
             font-family: var(--font-code);
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--primary-blue);
             display: flex;
@@ -289,34 +300,21 @@
         .spec-body {
             padding: 22px 26px;
             font-family: var(--font-code);
-            font-size: 14px;
-            line-height: 2;
+            font-size: 13.5px;
+            line-height: 2.1;
             background: #f8fafc;
             color: var(--text-main);
         }
 
-        .s-key { 
-            color: var(--primary-blue); 
-            font-weight: 600; 
-        }
-
-        .s-val { 
-            color: var(--text-main); 
-            font-weight: 500; 
-        }
-
-        .s-str { 
-            color: var(--text-main); 
-            font-weight: 500; 
-        }
-
+        .s-key { color: var(--primary-blue); font-weight: 600; }
+        .s-val { color: var(--text-main); font-weight: 500; }
+        .s-str { color: #0284c7; font-weight: 500; }
         .s-badge {
-            color: var(--primary-blue);
-            font-weight: 600;
-            display: inline;
-            padding: 0;
-            background: transparent;
-            border: none;
+            color: #2563eb;
+            font-weight: 700;
+            background: #dbeafe;
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .section-header {
@@ -327,6 +325,8 @@
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 20px;
+            border-bottom: 2px dashed #bfdbfe;
+            padding-bottom: 12px;
         }
 
         .section-header i {
@@ -341,13 +341,13 @@
         .info-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 14px;
         }
 
         .info-card {
             background: #ffffff;
             border: 1.5px solid #d2e4ff;
-            padding: 16px 12px;
+            padding: 18px 14px;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
@@ -356,13 +356,14 @@
         .info-card:hover {
             background: #f0f7ff;
             border-color: var(--soft-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.25);
         }
 
         .info-icon {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--primary-blue);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .info-lbl {
@@ -374,7 +375,7 @@
         }
 
         .info-val {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
             color: var(--text-main);
         }
@@ -382,51 +383,90 @@
         .interest-cards {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .interest-card {
             background: #ffffff;
             border: 1.5px solid #d2e4ff;
-            padding: 18px;
-            border-radius: 20px;
+            padding: 20px;
+            border-radius: 22px;
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: flex-start;
             transition: all 0.3s ease;
         }
 
         .interest-card:hover {
             border-color: var(--soft-blue);
-            transform: translateX(4px);
-            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.2);
+            transform: translateX(5px);
+            box-shadow: 0 8px 22px rgba(147, 197, 253, 0.25);
         }
 
         .interest-icon {
             background: #eef6ff;
             color: var(--primary-blue);
-            width: 42px;
-            height: 42px;
-            border-radius: 14px;
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 20px;
             flex-shrink: 0;
             border: 1.5px solid #d2e4ff;
         }
 
         .interest-content h3 {
-            font-size: 14.5px;
+            font-size: 15px;
             color: var(--text-main);
             margin-bottom: 4px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .interest-content p {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--text-sub);
             line-height: 1.6;
+        }
+
+        /* Tech Skill Meters */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .skill-box {
+            background: #ffffff;
+            border: 1.5px solid #d2e4ff;
+            padding: 16px;
+            border-radius: 18px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
         }
 
         .cta-container {
@@ -442,7 +482,7 @@
             justify-content: center;
             gap: 10px;
             width: 100%;
-            max-width: 360px;
+            max-width: 380px;
             padding: 15px 30px;
             background: linear-gradient(135deg, #4a90e2 0%, #70a6ff 100%);
             color: #ffffff;
@@ -485,8 +525,10 @@
 
         @media (max-width: 640px) {
             .main-wrapper { padding: 95px 16px 30px; }
-            .hero-layout { flex-direction: column; text-align: center; gap: 16px; }
+            .cyber-card { padding: 24px; }
+            .hero-layout { flex-direction: column; text-align: center; gap: 20px; }
             .info-grid { grid-template-columns: 1fr; }
+            .skills-container { grid-template-columns: 1fr; }
             .navbar { width: 92%; justify-content: space-between; padding: 6px 12px; }
             .nav-status { display: none; }
             .hero-details h1 { justify-content: center; }
@@ -505,7 +547,7 @@
     <nav class="navbar">
         <div class="nav-status">
             <span class="pulse-dot"></span>
-            <span>ONLINE </span>
+            <span>ONLINE ✨</span>
         </div>
         <a href="#home" class="nav-link active">หน้าแรก</a>
         <a href="#about" class="nav-link">ข้อมูลการศึกษา</a>
@@ -520,10 +562,12 @@
                     <div class="profile-frame">
                         <img src="S__49872901.jpg" alt="อัครินทร์ เสารยะวิเศษ" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
                     </div>
-                    <div class="tech-badge">☁️ IE </div>
+                    <div class="tech-badge">
+                        <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 8s;"></i> IE ASPIRANT
+                    </div>
                 </div>
                 <div class="hero-details">
-                    <h1>อัครินทร์ เสารยะวิเศษ <i class="fa-solid fa-cloud" style="color: var(--primary-blue); font-size: 18px;"></i></h1>
+                    <h1>อัครินทร์ เสารยะวิเศษ <i class="fa-solid fa-cloud" style="color: var(--primary-blue); font-size: 20px;"></i></h1>
                     <div class="english-title">Akarin Saorayawiset</div>
                     <div class="pill-group">
                         <span class="pill"><i class="fa-solid fa-graduation-cap"></i> ม.6 วิทย์-คณิต</span>
@@ -542,22 +586,22 @@
                     <span class="dot dot-green"></span>
                 </div>
                 <div class="spec-title">
-                    <i class="fa-solid fa-code" style="color: var(--primary-blue);"></i> เกี่ยวกับฉัน 
+                    <i class="fa-solid fa-code" style="color: var(--primary-blue);"></i> IE_Profile.json
                 </div>
                 <div style="width: 30px;"></div>
             </div>
             <div class="spec-body">
-                <div><span class="s-key">ชื่อ</span>: <span class="s-str">อัครินทร์ เสารยะวิเศษ</span>,</div>
-                <div><span class="s-key">คณะที่อยากเข้า</span>: <span class="s-str">วิศวกรรมศาสตร์ (วิศวกรรมอุตสาหการ)</span>,</div>
-                <div><span class="s-key">ทักษะ</span>: [<span class="s-val">การทำงานเป็นทีม</span>, <span class="s-val">มีไหวพริบ</span>, <span class="s-val">การแก้ไขปัญหา</span>],</div>
-                <div><span class="s-key">มหาลัยที่อยากเข้า</span>: <span class="s-badge">"สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง"</span></div>
+                <div><span class="s-key">"ชื่อ-นามสกุล"</span>: <span class="s-str">อัครินทร์ เสารยะวิเศษ</span>,</div>
+                <div><span class="s-key">"คณะเป้าหมาย"</span>: <span class="s-str">วิศวกรรมศาสตร์ วิศวกรรมอุตสาหการ</span>,</div>
+                <div><span class="s-key">"ทักษะ"</span>: <span class="s-val">การทำงานเป็นทีม</span>, <span class="s-val">มีไหวพริบ</span>, <span class="s-val">การแก้ไขปัญหา</span>,</div>
+                <div><span class="s-key">"มหาลัยที่อยากเข้า"</span>: <span class="s-badge">สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</span></div>
             </div>
         </section>
 
         <section id="about" class="cyber-card">
             <div class="section-header">
                 <i class="fa-solid fa-user-gear"></i>
-                <span>ประวัติการศึกษา</span>
+                <span>ประวัติการศึกษา (Education)</span>
             </div>
             <div class="info-grid">
                 <div class="info-card">
@@ -604,6 +648,23 @@
                     </div>
                 </div>
             </div>
+
+            <div class="skills-container" style="margin-top: 18px;">
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <span><i class="fa-solid fa-brain" style="color: var(--primary-blue);"></i> Problem Solving & Logic</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-header">
+                        <span><i class="fa-solid fa-people-group" style="color: var(--primary-blue);"></i> Teamwork & Leadership</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                </div>
+            </div>
         </section>
 
         <div class="cta-container">
@@ -614,7 +675,7 @@
         </div>
 
         <footer class="footer">
-            <p>© 2026 Akarin Saorayawiset • Sanrio  Style ☁️</p>
+            <p>© 2026 Akarin Saorayawiset • Portfolio System ✨</p>
         </footer>
 
     </main>
@@ -704,7 +765,7 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
+                if (current && link.getAttribute('href').includes(current)) {
                     link.classList.add('active');
                 }
             });
