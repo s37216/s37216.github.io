@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าหลัก | อัครินทร์ เสารยะวิเศษ</title>
+    <title>Portfolio | อัครินทร์ เสารยะวิเศษ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             --clr-border: #c7d2fe;
             --radius-full: 9999px;
             --radius-card: 28px;
-            --radius-inner: 18px;
+            --radius-inner: 16px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +27,7 @@
             background-color: var(--clr-bg);
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.2) 0%, transparent 40%);
+                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.25) 0%, transparent 40%);
             background-attachment: fixed;
             color: var(--clr-text);
             min-height: 100vh;
@@ -69,76 +69,142 @@
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
 
-        .container { max-width: 580px; width: 100%; }
+        .container { max-width: 620px; width: 100%; }
 
-        .card {
-            background: rgba(255, 255, 255, 0.9);
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
             border: 2px solid var(--clr-border);
             border-radius: var(--radius-card);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.1);
-            padding: 36px 28px;
+            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12);
+            padding: 40px 30px;
             text-align: center;
         }
 
-        .profile-wrapper {
-            width: 130px;
-            height: 160px;
+        .hero-badge {
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 16px;
+            border-radius: var(--radius-full);
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .profile-frame {
+            position: relative;
+            width: 140px;
+            height: 170px;
             margin: 0 auto 20px;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 24px;
+            border-radius: 26px;
             object-fit: cover;
             border: 4px solid #ffffff;
-            box-shadow: 0 12px 28px rgba(79, 70, 229, 0.18);
+            box-shadow: 0 12px 28px rgba(79, 70, 229, 0.2);
         }
 
-        h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+        h1 { font-size: 28px; font-weight: 700; color: var(--clr-text); margin-bottom: 4px; }
 
-        .english-name {
+        .sub-heading {
             font-size: 14px;
             color: var(--clr-purple);
             font-weight: 600;
-            background: #f5f3ff;
-            border: 1px solid rgba(167, 139, 250, 0.4);
+            margin-bottom: 16px;
             display: inline-block;
-            padding: 4px 18px;
-            border-radius: var(--radius-full);
         }
 
-        .tagline { margin: 16px 0 24px; font-size: 14px; color: var(--clr-muted); line-height: 1.6; }
+        .bio-text {
+            font-size: 14px;
+            color: var(--clr-muted);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
 
-        .quick-links { display: flex; flex-direction: column; gap: 10px; }
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 28px;
+        }
 
-        .menu-btn {
+        .highlight-item {
+            background: #ffffff;
+            border: 1.5px solid var(--clr-border);
+            border-radius: var(--radius-inner);
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .highlight-item .icon { font-size: 20px; margin-bottom: 4px; display: block; }
+        .highlight-item .title { font-size: 11px; color: var(--clr-purple); font-weight: 700; }
+        .highlight-item .value { font-size: 12.5px; color: var(--clr-text); font-weight: 600; }
+
+        .nav-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-card-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: #ffffff;
             border: 1.5px solid var(--clr-border);
-            padding: 14px 18px;
+            padding: 16px 20px;
             border-radius: var(--radius-inner);
             text-decoration: none;
             color: var(--clr-text);
-            font-weight: 600;
-            font-size: 14px;
             transition: all 0.3s ease;
         }
 
-        .menu-btn:hover {
+        .nav-card-btn:hover {
             border-color: var(--clr-purple);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(124, 58, 237, 0.15);
+        }
+
+        .nav-card-btn .btn-info {
+            text-align: left;
+        }
+
+        .nav-card-btn .btn-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--clr-text);
+            display: block;
+        }
+
+        .nav-card-btn:hover .btn-title { color: var(--clr-purple); }
+
+        .nav-card-btn .btn-desc {
+            font-size: 12px;
+            color: var(--clr-muted);
+        }
+
+        .nav-card-btn .arrow {
+            font-size: 18px;
             color: var(--clr-purple);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-card-btn:hover .arrow {
+            transform: translateX(4px);
         }
 
         @media (max-width: 580px) {
             body { padding-top: 85px; }
             .navbar { width: 95%; overflow-x: auto; justify-content: flex-start; }
             .nav-link { padding: 6px 12px; font-size: 12px; }
+            .highlights-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -152,27 +218,60 @@
     </nav>
 
     <main class="container">
-        <section class="card">
-            <div class="profile-wrapper">
-                <img src="S__49872901.jpg" alt="ภาพโปรไฟล์ อัครินทร์ เสารยะวิเศษ" class="profile-img">
+        <section class="portfolio-card">
+            <span class="hero-badge">Student Portfolio</span>
+
+            <div class="profile-frame">
+                <img src="S__49872901.jpg" alt="อัครินทร์ เสารยะวิเศษ" class="profile-img">
             </div>
 
             <h1>อัครินทร์ เสารยะวิเศษ</h1>
-            <span class="english-name">Akarin Saorayawiset</span>
-            <p class="tagline">ยินดีต้อนรับสู่เว็บไซต์แฟ้มสะสมผลงาน | มุ่งมั่นพัฒนาตนเองสู่การเป็นวิศวกรอุตสาหการยุคใหม่</p>
+            <span class="sub-heading">Akarin Saorayawiset</span>
+            <p class="bio-text">
+                แฟ้มสะสมผลงานอิเล็กทรอนิกส์ แสดงตัวตน เป้าหมาย และกิจกรรมวิชาการ เพื่อมุ่งสู่นักศึกษาวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ
+            </p>
 
-            <div class="quick-links">
-                <a href="about.html" class="menu-btn">
-                    <span>👤 1. เกี่ยวกับฉัน (About Me)</span>
-                    <span>➔</span>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <span class="icon">📚</span>
+                    <span class="title">แผนการเรียน</span>
+                    <div class="value">วิทย์-คณิต</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="icon">⚙️</span>
+                    <span class="title">สาขาที่มุ่งหวัง</span>
+                    <div class="value">วิศวกรรมอุตสาหการ</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="icon">💡</span>
+                    <span class="title">ความสนใจ</span>
+                    <div class="value">ระบบผลิต & นวัตกรรม</div>
+                </div>
+            </div>
+
+            <div class="nav-cards">
+                <a href="about.html" class="nav-card-btn">
+                    <div class="btn-info">
+                        <span class="btn-title">👤 เกี่ยวกับฉัน (About Me)</span>
+                        <span class="btn-desc">ข้อมูลส่วนตัว ทักษะ และความสนใจพิเศษ</span>
+                    </div>
+                    <span class="arrow">➔</span>
                 </a>
-                <a href="target.html" class="menu-btn">
-                    <span>💡 2. เป้าหมาย (Goals)</span>
-                    <span>➔</span>
+
+                <a href="target.html" class="nav-card-btn">
+                    <div class="btn-info">
+                        <span class="btn-title">💡 เป้าหมาย (Goals)</span>
+                        <span class="btn-desc">เป้าหมายการศึกษาและเส้นทางในอนาคต</span>
+                    </div>
+                    <span class="arrow">➔</span>
                 </a>
-                <a href="portfolio.html" class="menu-btn">
-                    <span>📁 3. ผลงาน (Portfolio)</span>
-                    <span>➔</span>
+
+                <a href="portfolio.html" class="nav-card-btn">
+                    <div class="btn-info">
+                        <span class="btn-title">📁 ผลงานและกิจกรรม (Portfolio)</span>
+                        <span class="btn-desc">การเข้าร่วมกิจกรรม Open House และงานวิชาการ</span>
+                    </div>
+                    <span class="arrow">➔</span>
                 </a>
             </div>
         </section>
