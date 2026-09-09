@@ -95,6 +95,7 @@
             width: 130px;
             height: 160px;
             margin: 0 auto 20px;
+            position: relative;
         }
 
         .profile-img {
@@ -104,6 +105,11 @@
             object-fit: cover;
             border: 4px solid #ffffff;
             box-shadow: 0 12px 28px rgba(79, 70, 229, 0.18);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-wrapper:hover .profile-img {
+            transform: scale(1.03);
         }
 
         h1 {
@@ -130,11 +136,63 @@
             line-height: 1.6;
         }
 
+        .section-subtitle {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--clr-text);
+            margin: 24px 0 12px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-inner);
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: #ffffff;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--clr-purple);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 10px 12px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--clr-text);
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         .quick-links {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-top: 24px;
         }
 
         .menu-btn {
@@ -173,6 +231,7 @@
             body { padding-top: 85px; }
             .navbar { width: 95%; overflow-x: auto; justify-content: flex-start; }
             .nav-link { padding: 6px 10px; font-size: 11.5px; }
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -191,9 +250,25 @@
             <div class="profile-wrapper">
                 <img src="S__49872901.jpg" alt="ภาพโปรไฟล์ อัครินทร์ เสารยะวิเศษ" class="profile-img">
             </div>
+
             <h1>อัครินทร์ เสารยะวิเศษ</h1>
             <span class="english-name">Akarin Saorayawiset</span>
             <p class="tagline">ยินดีต้อนรับสู่เว็บไซต์แนะนำตัว | มุ่งมั่นตั้งใจพัฒนาตนเองสู่การเป็นวิศวกรอุตสาหการยุคใหม่</p>
+
+            <div class="section-subtitle">
+                <span>🖼️ ผลงานและกิจกรรมไฮไลต์</span>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="portfolio.html" class="gallery-item">
+                    <img src="47F25AEF-EE5C-41C5-806C-11C6F1355588.png" alt="KMITL Open House">
+                    <div class="gallery-caption">🏆 KMITL Open House</div>
+                </a>
+                <a href="portfolio.html" class="gallery-item">
+                    <img src="C4EB96E4-4C3E-49F9-97F2-B0E811985FA0.png" alt="กิจกรรมวิชาการ ม.บูรพา">
+                    <div class="gallery-caption">🎓 กิจกรรม ม.บูรพา</div>
+                </a>
+            </div>
 
             <div class="quick-links">
                 <a href="index.html" class="menu-btn">
