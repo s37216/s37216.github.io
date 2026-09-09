@@ -3,106 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="หน้าแนะนำตัว | อัครินทร์ เสารยะวิเศษ (Akarin Saorayawiset)">
-    <title>อัครินทร์ เสารยะวิเศษ | Personal Profile</title>
-    
+    <title>คำนำ | อัครินทร์ เสารยะวิเศษ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
-         :root {
-            --clr-bg-base: #f5f3ff;
-            --clr-primary-blue: #4f46e5;
-            --clr-primary-purple: #7c3aed;
-            --clr-accent-sky: #38bdf8;
-            --clr-accent-violet: #a78bfa;
-            --clr-soft-blue: #e0e7ff;
-            --clr-soft-purple: #f3e8ff;
-            --clr-card-bg: rgba(255, 255, 255, 0.88);
-            
-            --clr-text-main: #0f172a;
-            --clr-text-muted: #475569;
-            --clr-border: #c7d2fe;
-            --clr-border-hover: #a78bfa;
-
-            --shadow-subtle: 0 4px 20px -2px rgba(99, 102, 241, 0.08);
-            --shadow-card: 0 12px 32px -4px rgba(99, 102, 241, 0.12);
-            --shadow-hover: 0 20px 40px -6px rgba(124, 58, 237, 0.22);
-            
+        :root {
+            --clr-bg: #f8fafc;
+            --clr-primary: #4f46e5;
+            --clr-purple: #7c3aed;
+            --clr-text: #0f172a;
+            --clr-muted: #475569;
             --radius-full: 9999px;
-            --radius-card: 28px;
-            --radius-inner: 18px;
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --radius-card: 24px;
+            --radius-inner: 16px;
         }
 
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--clr-bg-base);
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--clr-bg);
             background-image: 
-                radial-gradient(circle at 12% 15%, rgba(56, 189, 248, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 88% 85%, rgba(167, 139, 250, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(199, 210, 254, 0.20) 0%, transparent 60%),
-                linear-gradient(to right, rgba(167, 139, 250, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(167, 139, 250, 0.08) 1px, transparent 1px),
-                radial-gradient(rgba(99, 102, 241, 0.22) 1.8px, transparent 1.8px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px, 24px 24px;
-            background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+                radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.15) 0%, transparent 40%);
             background-attachment: fixed;
-            color: var(--clr-text-main);
+            color: var(--clr-text);
             min-height: 100vh;
-            padding: 100px 20px 60px;
+            padding: 90px 20px 40px;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-       .navbar {
+        .navbar {
             position: fixed;
-            top: 24px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.85);
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             padding: 6px 10px;
             border-radius: var(--radius-full);
-            border: 2px solid var(--clr-border);
-            box-shadow: var(--shadow-subtle);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
             z-index: 1000;
         }
 
         .nav-link {
             text-decoration: none;
-            color: var(--clr-text-muted);
+            color: var(--clr-muted);
             font-size: 13px;
             font-weight: 500;
-            padding: 8px 18px;
+            padding: 8px 14px;
             border-radius: var(--radius-full);
-            transition: var(--transition-bounce);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .nav-link:hover,
+        .nav-link:hover, 
         .nav-link.active {
-            background: linear-gradient(135deg, var(--clr-primary-blue), var(--clr-primary-purple));
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
             color: #ffffff;
-            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
-            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
 
         .container {
@@ -110,368 +78,99 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
         }
 
         .card {
-            background: var(--clr-card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 2.5px solid var(--clr-border);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border: 1px solid #ffffff;
             border-radius: var(--radius-card);
-            box-shadow: var(--shadow-card);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
             padding: 32px 28px;
-            text-align: center;
-            transition: var(--transition-bounce);
-            scroll-margin-top: 100px;
-            position: relative;
-            overflow: hidden;
         }
 
-        .card::before {
-            content: "✦";
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            color: var(--clr-accent-violet);
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--clr-border-hover);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .profile-wrapper {
-            position: relative;
-            width: 125px;
-            height: 155px;
-            margin: 0 auto 18px;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 22px;
-            object-fit: cover;
-            background-color: #ffffff;
-            border: 3px solid #ffffff;
-            outline: 2.5px solid var(--clr-border);
-            box-shadow: 0 10px 22px rgba(79, 70, 229, 0.15);
-            transition: var(--transition-bounce);
-        }
-
-        .profile-wrapper:hover .profile-img {
-            transform: scale(1.03) rotate(-1deg);
-            outline-color: var(--clr-primary-purple);
-        }
-
-        .profile-wrapper::after {
-            content: "☁️";
-            position: absolute;
-            bottom: -8px;
-            right: -8px;
-            font-size: 20px;
-            background: #ffffff;
-            border: 2px solid var(--clr-border);
-            border-radius: var(--radius-full);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        h1 {
-            color: var(--clr-text-main);
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            margin-bottom: 4px;
-        }
-
-        .english-name {
-            font-size: 13.5px;
-            color: var(--clr-primary-purple);
-            font-weight: 600;
-            background: var(--clr-soft-purple);
-            border: 1px solid rgba(167, 139, 250, 0.3);
-            display: inline-block;
-            padding: 4px 16px;
-            border-radius: var(--radius-full);
-            margin-top: 4px;
-        }
-
-       .section-title {
-            font-size: 17px;
-            color: var(--clr-text-main);
+        .section-title {
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 20px;
-            text-align: left;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 2px dashed var(--clr-border);
-            padding-bottom: 10px;
+            border-bottom: 2px dashed #e2e8f0;
+            padding-bottom: 12px;
         }
 
-        .section-title .badge {
-            background: linear-gradient(135deg, var(--clr-primary-blue), var(--clr-primary-purple));
+        .badge {
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
             color: #ffffff;
-            padding: 3px 10px;
+            padding: 4px 10px;
             border-radius: 8px;
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 2.2fr 1fr 1fr;
-            gap: 12px;
-        }
-
-        .info-box {
+        .preface-content {
             background: #ffffff;
-            border: 2px solid var(--clr-border);
-            padding: 14px 10px;
+            border: 1.5px solid #e2e8f0;
+            padding: 24px;
             border-radius: var(--radius-inner);
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            transition: var(--transition-fast);
+            line-height: 1.8;
+            color: var(--clr-muted);
+            font-size: 14.5px;
+            text-align: justify;
         }
 
-        .info-box:hover {
-            border-color: var(--clr-primary-purple);
-            transform: translateY(-2px);
+        .preface-content p {
+            margin-bottom: 16px;
         }
 
-        .info-label {
-            font-size: 11.5px;
-            color: var(--clr-text-muted);
-            display: block;
-            margin-bottom: 4px;
-            font-weight: 500;
+        .preface-content p:last-child {
+            margin-bottom: 0;
         }
 
-        .info-value, 
-        .info-value-school {
-            font-size: 13.5px;
+        .sign-off {
+            margin-top: 24px;
+            text-align: right;
             font-weight: 600;
-            color: var(--clr-primary-blue);
-            white-space: nowrap;
+            color: var(--clr-text);
         }
 
-        .details-section {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            text-align: left;
-        }
-
-        .detail-card {
-            background: linear-gradient(135deg, var(--clr-soft-blue) 0%, var(--clr-soft-purple) 100%);
-            border: 2px solid var(--clr-border);
-            padding: 18px 20px;
-            border-radius: var(--radius-inner);
-            transition: var(--transition-fast);
-        }
-
-        .detail-card:hover {
-            border-color: var(--clr-primary-purple);
-        }
-
-        .detail-card h3 {
-            font-size: 14px;
-            color: var(--clr-primary-purple);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-
-        .detail-card p {
-            font-size: 13.5px;
-            color: var(--clr-text-muted);
-            line-height: 1.65;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            margin-top: 4px;
-        }
-
-        .btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--clr-primary-blue) 0%, var(--clr-primary-purple) 100%);
-            color: #ffffff;
-            padding: 15px 36px;
-            text-decoration: none;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.28);
-            transition: var(--transition-bounce);
-            width: 100%;
-            max-width: 320px;
-            border: 2px solid #ffffff;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 14px 30px rgba(124, 58, 237, 0.38);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn span.arrow {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .btn:hover span.arrow {
-            transform: translateX(5px);
-        }
-
-       @media (max-width: 540px) {
-            body {
-                padding-top: 85px;
-            }
-
-            .navbar {
-                width: 92%;
-                justify-content: space-around;
-            }
-
-            .nav-link {
-                padding: 7px 12px;
-                font-size: 12.5px;
-            }
-
-            .card {
-                padding: 24px 20px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .school-box {
-                grid-column: 1 / -1;
-            }
+        @media (max-width: 580px) {
+            body { padding-top: 85px; }
+            .navbar { width: 95%; overflow-x: auto; justify-content: flex-start; }
+            .nav-link { padding: 6px 10px; font-size: 11.5px; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
-        <a href="#home" class="nav-link active">หน้าแรก</a>
-        <a href="#about" class="nav-link">เกี่ยวกับฉัน</a>
-        <a href="#interests" class="nav-link">เป้าหมาย</a>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link active">คำนำ</a>
+        <a href="home.html" class="nav-link">หน้าหลัก</a>
+        <a href="about.html" class="nav-link">เกี่ยวกับฉัน</a>
+        <a href="target.html" class="nav-link">เป้าหมาย</a>
+        <a href="portfolio.html" class="nav-link">ผลงาน</a>
     </nav>
 
     <main class="container">
-        
-         <section id="home" class="card">
-            <div class="profile-wrapper">
-                <img src="S__49872901.jpg" alt="ภาพโปรไฟล์ อัครินทร์ เสารยะวิเศษ" class="profile-img">
-            </div>
-            <h1>อัครินทร์ เสารยะวิเศษ</h1>
-            <span class="english-name">Akarin Saorayawiset</span>
-        </section>
-
-        <section id="about" class="card">
-            <h2 class="section-title">
-                <span class="badge">PROFILE</span> 👤 เกี่ยวกับฉัน
-            </h2>
-            <div class="info-grid">
-                <div class="info-box school-box">
-                    <span class="info-label">🏫 โรงเรียน</span>
-                    <span class="info-value-school">บ้านบึง "อุตสาหกรรมนุเคราะห์"</span>
+        <section class="card">
+            <h1 class="section-title">
+                <span class="badge">PREFACE</span> 📖 คำนำ
+            </h1>
+            <article class="preface-content">
+                <p>แฟ้มสะสมผลงานออนไลน์ (E-Portfolio) ฉบับนี้ จัดทำขึ้นเพื่อรวบรวมข้อมูลประวัติส่วนตัว ประวัติการศึกษา เป้าหมายในอนาคต รวมทั้งผลงานและกิจกรรมต่างๆ ของข้าพเจ้า <strong>นายอัครินทร์ เสารยะวิเศษ</strong></p>
+                <p>ข้าพเจ้ามีความสนใจและความมุ่งมั่นอย่างยิ่งที่จะศึกษาต่อในระดับอุดมศึกษา คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ เพื่อนำความรู้ ความสามารถ และทักษะที่ได้เรียนรู้ไปประยุกต์ใช้ในการพัฒนาและเพิ่มประสิทธิภาพของระบบงานในอนาคต</p>
+                <p>ขอขอบพระคุณคณะครู อาจารย์ และผู้มีส่วนเกี่ยวข้องทุกท่าน ที่ได้ให้การสนับสนุน คำแนะนำ และโอกาสในการพัฒนาตนเองมาโดยตลอด ข้าพเจ้าหวังเป็นอย่างยิ่งว่าเว็บไซต์แฟ้มสะสมผลงานนี้ จะทำให้ทุกท่านได้รู้จักตัวตน และความตั้งใจจริงของข้าพเจ้ามากยิ่งขึ้น</p>
+                <div class="sign-off">
+                    อัครินทร์ เสารยะวิเศษ<br>
+                    <span style="font-size: 13px; font-weight: 400; color: var(--clr-muted);">ผู้จัดทำ</span>
                 </div>
-                <div class="info-box">
-                    <span class="info-label">🎓 ระดับชั้น</span>
-                    <span class="info-value">มัธยมศึกษาปีที่ 6</span>
-                </div>
-                <div class="info-box">
-                    <span class="info-label">📚 แผนการเรียน</span>
-                    <span class="info-value">วิทย์ - คณิต</span>
-                </div>
-            </div>
+            </article>
         </section>
-
-        <section id="interests" class="card">
-            <h2 class="section-title">
-                <span class="badge">GOALS</span> 💡 ความสนใจและเป้าหมาย
-            </h2>
-            <div class="details-section">
-                <article class="detail-card">
-                    <h3>🎯 เป้าหมายในการศึกษาต่อ</h3>
-                    <p>มีความมุ่งมั่นตั้งใจที่จะศึกษาต่อในระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (IE) ในมหาวิทยาลัยที่ใฝ่ฝัน เพื่อเตรียมความพร้อมสู่สายอาชีพวิศวกรมืออาชีพ</p>
-                </article>
-                <article class="detail-card">
-                    <h3>⚡ สิ่งที่สนใจและความตั้งใจในคณะ</h3>
-                    <p>สนใจกระบวนการเพิ่มประสิทธิภาพการทำงาน การลดความสูญเปล่าในระบบการผลิต (Lean Manufacturing) ตลอดจนการประยุกต์ใช้เทคโนโลยีและการจัดการเชิงระบบเพื่อยกระดับอุตสาหกรรมให้ก้าวทันโลกยุคใหม่</p>
-                </article>
-            </div>
-        </section>
-
-        <div class="btn-group">
-            <a href="portfolio.html" class="btn">
-                ดูแฟ้มสะสมผลงาน (Portfolio)
-                <span class="arrow" aria-hidden="true">➔</span>
-            </a>
-        </div>
-
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -60% 0px',
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
+</body>
+</html>
 </body>
 </html>
