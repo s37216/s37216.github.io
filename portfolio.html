@@ -17,7 +17,7 @@
             --clr-border: #c7d2fe;
             --radius-full: 9999px;
             --radius-card: 28px;
-            --radius-inner: 18px;
+            --radius-inner: 20px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +27,7 @@
             background-color: var(--clr-bg);
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.2) 0%, transparent 40%);
+                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.25) 0%, transparent 40%);
             background-attachment: fixed;
             color: var(--clr-text);
             min-height: 100vh;
@@ -69,72 +69,101 @@
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
 
-        .container { max-width: 600px; width: 100%; }
+        .container { max-width: 640px; width: 100%; }
 
-        .card {
-            background: rgba(255, 255, 255, 0.9);
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
             border: 2px solid var(--clr-border);
             border-radius: var(--radius-card);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.1);
-            padding: 36px 28px;
+            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12);
+            padding: 40px 30px;
             text-align: center;
         }
 
-        .badge {
+        .hero-badge {
             background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
             color: #ffffff;
-            padding: 4px 16px;
-            border-radius: var(--radius-full);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 16px;
+            border-radius: var(--radius-full);
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        h1 { font-size: 26px; font-weight: 700; margin-bottom: 20px; }
+        h1 { font-size: 26px; font-weight: 700; color: var(--clr-text); margin-bottom: 24px; }
 
         .portfolio-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 24px;
+            margin-bottom: 30px;
         }
 
-        .portfolio-card {
+        .work-item {
             background: #ffffff;
             border: 1.5px solid var(--clr-border);
             border-radius: var(--radius-inner);
             overflow: hidden;
             text-align: left;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
         }
 
-        .portfolio-card:hover {
-            transform: translateY(-3px);
+        .work-item:hover {
             border-color: var(--clr-purple);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(124, 58, 237, 0.15);
         }
 
-        .portfolio-card img {
+        .img-container {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            background-color: #f8fafc;
+            border-bottom: 1.5px solid var(--clr-border);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            border-radius: 12px;
             display: block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
-        .portfolio-card-content { padding: 16px; }
+        .work-content { padding: 18px 20px; }
 
-        .portfolio-card h3 {
-            font-size: 15px;
+        .work-tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--clr-purple);
+            background: #f5f3ff;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            display: inline-block;
+            margin-bottom: 8px;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .work-title {
+            font-size: 16px;
+            font-weight: 700;
             color: var(--clr-text);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
-        .portfolio-card p {
-            font-size: 13px;
+        .work-desc {
+            font-size: 13.5px;
             color: var(--clr-muted);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .btn {
@@ -161,6 +190,7 @@
             body { padding-top: 85px; }
             .navbar { width: 95%; overflow-x: auto; justify-content: flex-start; }
             .nav-link { padding: 6px 12px; font-size: 12px; }
+            .img-container { padding: 8px; }
         }
     </style>
 </head>
@@ -174,26 +204,39 @@
     </nav>
 
     <main class="container">
-        <section class="card">
-            <span class="badge">PORTFOLIO</span>
-            <h1>ผลงานและกิจกรรม</h1>
+        <section class="portfolio-card">
+            <span class="hero-badge">PORTFOLIO & ACTIVITIES</span>
+            <h1>ผลงานและกิจกรรมเข้าร่วม</h1>
 
             <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <img src="47F25AEF-EE5C-41C5-806C-11C6F1355588.png" alt="KMITL Open House">
-                    <div class="portfolio-card-content">
-                        <h3>🏆 เข้าร่วมกิจกรรม KMITL Open House</h3>
-                        <p>ศึกษาเรียนรู้แนวคิดด้านวิศวกรรมและการประยุกต์ใช้นวัตกรรม ณ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+
+                <!-- ผลงานที่ 1 -->
+                <div class="work-item">
+                    <div class="img-container">
+                        <img src="47F25AEF-EE5C-41C5-806C-11C6F1355588.png" alt="กิจกรรม KMITL Open House">
+                    </div>
+                    <div class="work-content">
+                        <span class="work-tag">OPEN HOUSE</span>
+                        <h3 class="work-title">🏆 เข้าร่วมกิจกรรม KMITL Open House</h3>
+                        <p class="work-desc">
+                            เข้าร่วมงานเปิดบ้านวิชาการเพื่อเข้าชมการแสดงผลงาน นวัตกรรม และห้องปฏิบัติการจริงของสาขาวิชาวิศวกรรมอุตสาหการ พร้อมทั้งร่วมฟังการแนะแนวหลักสูตรและสอบถามประสบการณ์ตรงจากอาจารย์ประจำสาขาและรุ่นพี่นักศึกษา
+                        </p>
                     </div>
                 </div>
 
-                <div class="portfolio-card">
-                    <img src="C4EB96E4-4C3E-49F9-97F2-B0E811985FA0.png" alt="กิจกรรม ม.บูรพา">
-                    <div class="portfolio-card-content">
-                        <h3>🎓 เข้าร่วมกิจกรรมวิชาการ มหาวิทยาลัยบูรพา</h3>
-                        <p>ร่วมกิจกรรมเปิดบ้านวิชาการเพื่อสั่งสมประสบการณ์และเปิดมุมมองในสาขาวิศวกรรมศาสตร์</p>
+                <div class="work-item">
+                    <div class="img-container">
+                        <img src="C4EB96E4-4C3E-49F9-97F2-B0E811985FA0.png" alt="กิจกรรมวิชาการ มหาวิทยาลัยบูรพา">
+                    </div>
+                    <div class="work-content">
+                        <span class="work-tag">ACADEMIC ACTIVITY</span>
+                        <h3 class="work-title">🎓 เข้าร่วมกิจกรรมวิชาการ มหาวิทยาลัยบูรพา</h3>
+                        <p class="work-desc">
+                           เข้าร่วมโครงการเปิดบ้าน/แข่งขันวิชาการด้านการบริหารธุรกิจ ณ มหาวิทยาลัยบูรพา เพื่อเรียนรู้กระบวนการวางแผนเชิงยุทธศาสตร์ การบริหารจัดการทรัพยากร การวิเคราะห์ตลาด
+                        </p>
                     </div>
                 </div>
+
             </div>
 
             <a href="index.html" class="btn">กลับสู่หน้าหลัก 🏠</a>
