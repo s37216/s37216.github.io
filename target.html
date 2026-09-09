@@ -9,28 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --clr-bg: #f8fafc;
+            --clr-bg: #f5f3ff;
             --clr-primary: #4f46e5;
             --clr-purple: #7c3aed;
             --clr-text: #0f172a;
             --clr-muted: #475569;
+            --clr-border: #c7d2fe;
             --radius-full: 9999px;
-            --radius-card: 24px;
-            --radius-inner: 16px;
+            --radius-card: 28px;
+            --radius-inner: 18px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Prompt', sans-serif;
             background-color: var(--clr-bg);
             background-image: 
-                radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(167, 139, 250, 0.2) 0%, transparent 40%);
             background-attachment: fixed;
             color: var(--clr-text);
             min-height: 100vh;
@@ -66,76 +63,80 @@
             white-space: nowrap;
         }
 
-        .nav-link:hover, 
-        .nav-link.active {
+        .nav-link:hover, .nav-link.active {
             background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
             color: #ffffff;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
 
-        .container {
-            max-width: 580px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .container { max-width: 600px; width: 100%; }
 
         .card {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(16px);
-            border: 1px solid #ffffff;
+            border: 2px solid var(--clr-border);
             border-radius: var(--radius-card);
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-            padding: 32px 28px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px dashed #e2e8f0;
-            padding-bottom: 12px;
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.1);
+            padding: 36px 28px;
+            text-align: center;
         }
 
         .badge {
             background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
             color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 11px;
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
             font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
         }
 
-        .target-box {
+        h1 { font-size: 26px; font-weight: 700; margin-bottom: 20px; }
+
+        .goal-box {
             background: #ffffff;
-            border: 1.5px solid #e2e8f0;
-            padding: 20px;
+            border: 1.5px solid var(--clr-border);
             border-radius: var(--radius-inner);
+            padding: 18px 20px;
+            text-align: left;
             margin-bottom: 14px;
         }
 
-        .target-box:last-child {
-            margin-bottom: 0;
-        }
-
-        .target-box h2 {
+        .goal-box h3 {
             font-size: 15px;
             color: var(--clr-purple);
-            margin-bottom: 8px;
-            font-weight: 600;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .target-box p {
-            font-size: 14px;
+        .goal-box p {
+            font-size: 13.5px;
             color: var(--clr-muted);
-            line-height: 1.65;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-purple));
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
         }
 
         @media (max-width: 580px) {
@@ -148,35 +149,32 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-link">คำนำ</a>
-        <a href="home.html" class="nav-link">หน้าหลัก</a>
+        <a href="index.html" class="nav-link">หน้าหลัก</a>
+        <a href="preface.html" class="nav-link">คำนำ</a>
         <a href="about.html" class="nav-link">เกี่ยวกับฉัน</a>
         <a href="target.html" class="nav-link active">เป้าหมาย</a>
         <a href="portfolio.html" class="nav-link">ผลงาน</a>
     </nav>
 
-     <main class="container">
+    <main class="container">
         <section class="card">
-            <h1 class="section-title">
-                <span class="badge">GOALS</span> 💡 เป้าหมายและความสนใจ
-            </h1>
+            <span class="badge">GOALS</span>
+            <h1>เป้าหมายของฉัน</h1>
 
-            <article class="target-box">
-                <h2>🎯 เป้าหมายการศึกษาต่อ</h2>
-                <p>มุ่งมั่นเข้าศึกษาต่อระดับปริญญาตรี คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ (Industrial Engineering) เพื่อสร้างพื้นฐานทางวิศวกรรมและการบริหารจัดการที่มั่นคง</p>
-            </article>
+            <div class="goal-box">
+                <h3>🎓 เป้าหมายการศึกษา</h3>
+                <p>เข้าศึกษาต่อในคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอุตสาหการ เพื่อปูพื้นฐานความรู้ทางเทคโนโลยีและการจัดการกระบวนการผลิต</p>
+            </div>
 
-            <article class="target-box">
-                <h2>⚡ ความสนใจทางด้านวิชาการ</h2>
-                <p>สนใจการพัฒนากระบวนการผลิต การเพิ่มประสิทธิภาพองค์กร การบริหารจัดการระบบโซ่อุปทาน (Supply Chain) และแนวคิดการลดความสูญเปล่า (Lean Manufacturing)</p>
-            </article>
+            <div class="goal-box">
+                <h3>🚀 เป้าหมายระยะยาว</h3>
+                <p>พัฒนาตนเองให้เป็นวิศวกรอุตสาหการที่มีความเชี่ยวชาญ สามารถออกแบบและปรับปรุงระบบการทำงานในภาคอุตสาหกรรมให้มีประสิทธิภาพสูงสุด</p>
+            </div>
 
-            <article class="target-box">
-                <h2>🚀 เป้าหมายในอนาคต</h2>
-                <p>ก้าวสู่การเป็นวิศวกรอุตสาหการที่มีความเชี่ยวชาญ สามารถนำเทคโนโลยีมาประยุกต์ใช้ในการปรับปรุงกระบวนการทำงานจริงเพื่อขับเคลื่อนองค์กรและอุตสาหกรรมยุคใหม่</p>
-            </article>
+            <a href="portfolio.html" class="btn">ถัดไป: ผลงาน ➔</a>
         </section>
     </main>
 
 </body>
+</html>
 </html>
